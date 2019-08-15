@@ -6,7 +6,7 @@
     <div class="page-header page-header-light">
         <div class="page-header-content header-elements-md-inline">
             <div class="page-title d-flex">
-                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">របាយការណ៍</span> - របាយការណ៍លក់
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">របាយការណ៍</span> - របាយការណ៍ថ្លៃឈ្នួល
                 </h4>
                 <a href="#" class="ml-auto align-self-center text-default d-md-none" data-toggle="collapse"
                    data-target="#navbar-mobile-top-header"><i class="icon-more"></i></a>
@@ -19,7 +19,7 @@
                                                 class="navbar-nav-link {{request()->is('report-buy')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ទិញ</a></li>
                         <li class="nav-item"><a href="{{route('sell')}}"
-                                                class="navbar-nav-link {{request()->is('report-sell' || '/')? 'active':''}}"><i
+                                                class="navbar-nav-link {{request()->is('report-sell')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> លក់</a></li>
                         <li class="nav-item"><a href="{{route('inc.exp.index')}}"
                                                 class="navbar-nav-link {{request()->is('report-income-expense-index')? 'active':''}}"><i
@@ -35,7 +35,7 @@
                 <div class="breadcrumb">
                     <a href="{{route('buy')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>
                         របាយការណ័</a>
-                    <span class="breadcrumb-item active">របាយការណ៍លក់</span>
+                    <span class="breadcrumb-item active">របាយការណ៍ថ្លៃឈ្នួល</span>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
     <!-- Scrollable datatable -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">បញ្ជីទំនិញ</h5>
+            <h5 class="card-title">របាយការណ៍ថ្លៃឈ្នួល</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>
@@ -74,11 +74,11 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h3 class="font-weight-semibold mb-0 totalCount"></h3>
+                                <h3 class="font-weight-semibold mb-0 exp"></h3>
                             </div>
 
                             <div>
-                                ចំនួនសរុប
+                                ចំណាយ
                             </div>
                         </div>
 
@@ -94,11 +94,11 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h3 class="font-weight-semibold mb-0 totalAmount"></h3>
+                                <h3 class="font-weight-semibold mb-0 inc"></h3>
                             </div>
 
                             <div>
-                                តម្លៃទិញសរុប
+                                ថ្លៃឈ្នួល
                             </div>
                         </div>
 
@@ -114,11 +114,11 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h3 class="font-weight-semibold mb-0 totalIncomeAmount"></h3>
+                                <h3 class="font-weight-semibold mb-0 remain"></h3>
                             </div>
 
                             <div>
-                                ចំណេញពីការលក់សរុប
+                                នៅសល់
                             </div>
                         </div>
 
@@ -131,17 +131,6 @@
                 </div>
             </div>
         </div>
-        <table class="table table-bordered table-sm table-striped datatable-scroll-y" width="100%">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>ពិពណ៌នា</th>
-                <th>ចំនួន</th>
-                <th>តម្លៃលក់សរុប</th>
-                <th>ថ្ងៃខែឆ្នាំ</th>
-            </tr>
-            </thead>
-        </table>
     </div>
     <!-- /scrollable datatable -->
 @stop
@@ -169,5 +158,5 @@
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/tables/datatables/extensions/dataTables.rowGroup.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/km.js"></script>--}}
-    <script src="{{asset('js/pages/report/sell.js')}}"></script>
+    <script src="{{asset('js/pages/report/inc_exp.js')}}"></script>
 @endpush

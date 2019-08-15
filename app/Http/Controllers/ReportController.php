@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\ExpenseNote;
+use App\IncomeNote;
 use App\InvoiceDetail;
 use App\StockDetail;
 use Carbon\Carbon;
@@ -10,6 +12,25 @@ use Yajra\DataTables\DataTables;
 
 class ReportController extends Controller
 {
+    public function exp_inc_index(){
+        return view('report.inc_exp');
+    }
+    /*salary expense and income note*/
+    public function exp_inc(Request $request){
+        $input = $request->all();
+        $expenses = ExpenseNote::whereBetween('created_at',[$input['start'],$input['end']])->get();
+        $incomes = IncomeNote::whereBetween('created_at',[$input['start'],$input['end']])->get();
+        $total_expense = 0;
+        $total_income = 0;
+        foreach ($expenses as $values){
+            $total_expense += $values['amount'];
+        }
+        foreach ($incomes as $values){
+            $total_income += $values['amount'];
+        }
+        $remain = $total_income-$total_expense;
+        return response()->json(['exp'=>money_format('$%i', $total_expense),'inc'=>money_format('$%i', $total_income),'remain'=>money_format('$%i', $remain)]);
+    }
     public function sell_list(Request $request){
         $input = $request->all();
         $invoice_detail = InvoiceDetail::with('stock_detail')

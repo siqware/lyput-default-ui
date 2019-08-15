@@ -50,7 +50,7 @@
                 <li class="nav-item">
                     <a href="{{route('dashboard')}}" class="nav-link {{request()->is('/')? 'active':''}}">
                         <i class="icon-home4"></i>
-                        <span>ផ្ទាំងគ្រប់គ្រង</span>
+                        <span>ផ្ទាំងដើម</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -72,7 +72,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="layout_1/LTR/default/full/changelog.html" class="nav-link">
+                    <a href="{{route('buy')}}" class="nav-link {{request()->is('report*')? 'active':''}}">
                         <i class="icon-graph"></i>
                         <span>របាយការណ៏</span>
                     </a>

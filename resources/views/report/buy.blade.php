@@ -6,7 +6,7 @@
     <div class="page-header page-header-light">
         <div class="page-header-content header-elements-md-inline">
             <div class="page-title d-flex">
-                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">ទំនិញ</span> - បញ្ជីទំនិញ
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">របាយការណ៍</span> - របាយការណ៍ទិញ
                 </h4>
                 <a href="#" class="ml-auto align-self-center text-default d-md-none" data-toggle="collapse"
                    data-target="#navbar-mobile-top-header"><i class="icon-more"></i></a>
@@ -15,12 +15,16 @@
             <div class="navbar navbar-expand-md navbar-dark bg-teal-400">
                 <div class="collapse navbar-collapse" id="navbar-mobile-top-header">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="{{route('product.index')}}"
-                                                class="navbar-nav-link {{request()->is('product')? 'active':''}}"><i
-                                        class="icon-list-numbered mr-2"></i> បញ្ជី</a></li>
-                        <li class="nav-item"><a href="{{route('product.create')}}"
-                                                class="navbar-nav-link {{request()->is('product/create')? 'active':''}}"><i
-                                        class="icon-add mr-2"></i> បន្ថែមទំនិញ</a></li>
+                        <li class="nav-item"><a href="{{route('buy')}}"
+                                                class="navbar-nav-link {{request()->is('report-buy')? 'active':''}}"><i
+                                        class="icon-graph mr-2"></i> ទិញ</a></li>
+                        <li class="nav-item"><a href="{{route('sell')}}"
+                                                class="navbar-nav-link {{request()->is('report-sell')? 'active':''}}"><i
+                                        class="icon-graph mr-2"></i> លក់</a></li>
+                        <li class="nav-item"><a href="{{route('inc.exp.index')}}"
+                                                class="navbar-nav-link {{request()->is('report-income-expense-index')? 'active':''}}"><i
+                                        class="icon-graph mr-2"></i> ថ្លៃឈ្នួល</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -29,9 +33,9 @@
         <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
             <div class="d-flex">
                 <div class="breadcrumb">
-                    <a href="{{route('product.index')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>
-                        ទំនិញ</a>
-                    <span class="breadcrumb-item active">បញ្ជីទំនិញ</span>
+                    <a href="{{route('buy')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>
+                        របាយការណ័</a>
+                    <span class="breadcrumb-item active">របាយការណ៍ទិញ</span>
                 </div>
             </div>
         </div>
@@ -41,7 +45,7 @@
     <!-- Scrollable datatable -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">បញ្ជីទំនិញ</h5>
+            <h5 class="card-title">របាយការណ៍ទិញ</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>
@@ -51,12 +55,12 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-5">
-                    <button id="btn-today" class="btn btn-success">Today</button>
-                    <button id="btn-yesterday" class="btn btn-success">Yesterday</button>
-                    <button id="btn-last-7days" class="btn btn-success">Last 7 Days</button>
-                    <button id="btn-last-30days" class="btn btn-success">Last 30 Days</button>
-                    <button id="btn-this-month" class="btn btn-success">This Month</button>
-                    <button id="btn-last-month" class="btn btn-success">Last Month</button>
+                    <button id="btn-today" class="btn btn-success">ថ្ងៃនេះ</button>
+                    <button id="btn-yesterday" class="btn btn-success">ម្សិលមិញ</button>
+                    <button id="btn-last-7days" class="btn btn-success">ប្រាំពីថ្ងៃមុន</button>
+                    <button id="btn-last-30days" class="btn btn-success">សាមសិបថ្ងៃមុន</button>
+                    <button id="btn-this-month" class="btn btn-success">ខែនេះ</button>
+                    <button id="btn-last-month" class="btn btn-success">ខែមុន</button>
                 </div>
                 <div class="col-lg-3 d-flex">
                     <input type="date" id="start" class="form-control">

@@ -13,7 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {return view('blank');})->name('dashboard');
+Route::get('/', function () {return view('report.sell');})->name('dashboard');
 Route::get('media', function () {return view('file-manager');})->name('media');
 
 Auth::routes();
@@ -40,4 +40,5 @@ Route::get('/report-buy-list','ReportController@buy_list')->name('buy.list');
 Route::get('/report-buy','ReportController@buy')->name('buy');
 Route::get('/report-sell','ReportController@sell')->name('sell');
 Route::get('/report-sell-list','ReportController@sell_list')->name('sell.list');
-
+Route::get('/report-income-expense','ReportController@exp_inc')->name('inc.exp');
+Route::get('/report-income-expense-index','ReportController@exp_inc_index')->name('inc.exp.index');

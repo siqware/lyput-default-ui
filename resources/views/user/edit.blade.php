@@ -6,17 +6,22 @@
     <div class="page-header page-header-light">
         <div class="page-header-content header-elements-md-inline">
             <div class="page-title d-flex">
-                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">User</span> - Update | Delete User
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">អ្នកប្រើប្រាស់</span> - កែប្រែអ្នកប្រើប្រាស់
                 </h4>
-                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                <a href="#" class="ml-auto align-self-center text-default d-md-none" data-toggle="collapse"
+                   data-target="#navbar-mobile-top-header"><i class="icon-more"></i></a>
             </div>
 
-            <div class="header-elements d-none">
-                <div class="d-flex justify-content-center">
-                    <a href="{{route('user.index')}}" class="btn btn-link btn-float text-default"><i
-                            class="icon-list-numbered text-primary"></i><span>List</span></a>
-                    <a href="{{route('user.create')}}" class="btn btn-link btn-float text-default"><i
-                            class="icon-add text-primary"></i> <span>New</span></a>
+            <div class="navbar navbar-expand-md navbar-dark bg-teal-400">
+                <div class="collapse navbar-collapse" id="navbar-mobile-top-header">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="{{route('user.index')}}"
+                                                class="navbar-nav-link {{request()->is('user')? 'active':''}}"><i
+                                        class="icon-list-numbered mr-2"></i> បញ្ជី</a></li>
+                        <li class="nav-item"><a href="{{route('user.create')}}"
+                                                class="navbar-nav-link {{request()->is('user/create')? 'active':''}}"><i
+                                        class="icon-pencil mr-2"></i> បន្ថែម</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -24,8 +29,9 @@
         <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
             <div class="d-flex">
                 <div class="breadcrumb">
-                    <a href="{{route('user.index')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> User</a>
-                    <span class="breadcrumb-item active">Update | Delete User</span>
+                    <a href="{{route('user.index')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>
+                        ប្រើប្រាស់</a>
+                    <span class="breadcrumb-item active">កែប្រែអ្នកប្រើប្រាស់</span>
                 </div>
             </div>
         </div>
@@ -35,7 +41,7 @@
     <!-- Form layouts -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">Update | Delete User</h5>
+            <h5 class="card-title">កែប្រែអ្នកប្រើប្រាស់</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>
@@ -50,7 +56,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <fieldset>
-                            <legend class="font-weight-semibold"><i class="icon-reading mr-2"></i> User Information
+                            <legend class="font-weight-semibold"><i class="icon-reading mr-2"></i> ពត៌មានអ្នកប្រើប្រាស់
                             </legend>
                             {{--Profile--}}
                             <div class="form-group row">
@@ -138,9 +144,9 @@
                         <input type="hidden" name="_method" value="delete">
                     </form>
                     <div class="text-right">
-                        <button onclick="document.getElementById('form-edit').submit();" class="btn btn-primary">Update <i class="icon-sync ml-2"></i>
+                        <button onclick="document.getElementById('form-edit').submit();" class="btn btn-primary">កែប្រែ <i class="icon-sync ml-2"></i>
                         </button>
-                        <button id="sweet_combine" class="btn btn-warning">Delete <i class="icon-database-remove ml-2"></i>
+                        <button id="sweet_combine" class="btn btn-warning">លុប <i class="icon-database-remove ml-2"></i>
                         </button>
                     </div>
                 </div>

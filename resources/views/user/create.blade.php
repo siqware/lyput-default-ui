@@ -6,17 +6,22 @@
     <div class="page-header page-header-light">
         <div class="page-header-content header-elements-md-inline">
             <div class="page-title d-flex">
-                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">User</span> - New User
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">អ្នកប្រើប្រាស់</span> - បន្ថែមអ្នកប្រើប្រាស់
                 </h4>
-                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                <a href="#" class="ml-auto align-self-center text-default d-md-none" data-toggle="collapse"
+                   data-target="#navbar-mobile-top-header"><i class="icon-more"></i></a>
             </div>
 
-            <div class="header-elements d-none">
-                <div class="d-flex justify-content-center">
-                    <a href="{{route('user.index')}}" class="btn btn-link btn-float text-default"><i
-                            class="icon-list-numbered text-primary"></i><span>List</span></a>
-                    <a href="{{route('user.create')}}" class="btn btn-link btn-float text-default"><i
-                            class="icon-add text-primary"></i> <span>New</span></a>
+            <div class="navbar navbar-expand-md navbar-dark bg-teal-400">
+                <div class="collapse navbar-collapse" id="navbar-mobile-top-header">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="{{route('user.index')}}"
+                                                class="navbar-nav-link {{request()->is('user')? 'active':''}}"><i
+                                        class="icon-list-numbered mr-2"></i> បញ្ជី</a></li>
+                        <li class="nav-item"><a href="{{route('user.create')}}"
+                                                class="navbar-nav-link {{request()->is('user/create')? 'active':''}}"><i
+                                        class="icon-pencil mr-2"></i> បន្ថែម</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -24,8 +29,9 @@
         <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
             <div class="d-flex">
                 <div class="breadcrumb">
-                    <a href="{{route('user.index')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> User</a>
-                    <span class="breadcrumb-item active">New User</span>
+                    <a href="{{route('user.index')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>
+                        ប្រើប្រាស់</a>
+                    <span class="breadcrumb-item active">បន្ថែមអ្នកប្រើប្រាស់</span>
                 </div>
             </div>
         </div>
@@ -35,7 +41,7 @@
     <!-- Form layouts -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">Add User</h5>
+            <h5 class="card-title">បន្ថែមអ្នកប្រើប្រាស់</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>

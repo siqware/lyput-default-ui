@@ -41,7 +41,7 @@
     <!-- New Bulk Product -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">បន្ថែមទំនិញ</h5>
+            <h5 class="card-title">កត់វិក័យប័ត្រ</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>
