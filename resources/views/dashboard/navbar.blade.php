@@ -25,8 +25,8 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a href="#" class="navbar-nav-link">
-                    Text link
+                <a href="{{route('product.check')}}" class="navbar-nav-link">
+                    ពិនិត្យទំនិញ
                 </a>
             </li>
 

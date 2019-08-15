@@ -66,9 +66,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('expense.index')}}" class="nav-link  {{request()->is('expense*')? 'active':''}}">
+                        <i class="icon-cash2"></i>
+                        <span>ចំណាយប្រចាំថ្ងៃ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="layout_1/LTR/default/full/changelog.html" class="nav-link">
-                        <i class="icon-check"></i>
-                        <span>ពិនិត្យទំនិញ</span>
+                        <i class="icon-graph"></i>
+                        <span>របាយការណ៏</span>
                     </a>
                 </li>
                 <li class="nav-item">

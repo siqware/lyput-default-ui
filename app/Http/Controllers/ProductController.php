@@ -12,6 +12,10 @@ use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
 {
+    /*check product index*/
+    public function check(){
+        return view('product.check');
+    }
     /*search stock product*/
     public function search_stock(Request $request){
         $inputTerm = $request->_term;
@@ -64,6 +68,25 @@ class ProductController extends Controller
 									</div>';
             })
             ->rawColumns(['action'])
+            ->make(true);
+    }
+    /*product check list*/
+    public function check_list(){
+        $product =  StockDetail::with('product')->get();
+        return DataTables::of($product)
+            ->editColumn('created_at',function ($created_at){
+                return Carbon::parse($created_at->created_at)->format('d-m-Y h:m:s');
+            })
+            ->editColumn('remain_qty',function ($remain_qty){
+                return $remain_qty->remain_qty<=0?'<span class="text-warning">'.$remain_qty->remain_qty.'</span>':'<span class="text-success">'.$remain_qty->remain_qty.'</span>';
+            })
+            ->editColumn('pur_price',function ($pur_price){
+                return money_format('$%i', $pur_price->pur_price);
+            })
+            ->editColumn('sell_price',function ($sell_price){
+                return money_format('$%i', $sell_price->sell_price);
+            })
+            ->rawColumns(['remain_qty'])
             ->make(true);
     }
     public function index()

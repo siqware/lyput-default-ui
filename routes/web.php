@@ -25,6 +25,8 @@ Route::get('/user-json-list', 'UserController@user_json_list')->name('user.json.
 Route::resource('/product','ProductController');
 Route::get('/product-stock-detail-list','ProductController@product_stock_detail')->name('product.stock.list');
 Route::post('/search-product-stock','ProductController@search_stock')->name('product.search.stock');
+Route::get('/product-check','ProductController@check')->name('product.check');
+Route::get('/product-check-list','ProductController@check_list')->name('product.check.list');
 /*Invoice Detail*/
 Route::resource('/invoice','InvoiceController');
 Route::get('/invoice-index','ProductController@invoicing_index')->name('product.invoice.index');
@@ -33,4 +35,9 @@ Route::get('/invoice-detail-list','InvoiceController@invoice_list')->name('invoi
 /*Expense*/
 Route::resource('expense','ExpenseNoteController');
 Route::get('/expense-list','ExpenseNoteController@expense_list')->name('expense.list');
+/*Report*/
+Route::get('/report-buy-list','ReportController@buy_list')->name('buy.list');
+Route::get('/report-buy','ReportController@buy')->name('buy');
+Route::get('/report-sell','ReportController@sell')->name('sell');
+Route::get('/report-sell-list','ReportController@sell_list')->name('sell.list');
 
