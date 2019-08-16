@@ -22,7 +22,7 @@
                                                 class="navbar-nav-link {{request()->is('report-sell')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> លក់</a></li>
                         <li class="nav-item"><a href="{{route('inc.exp.index')}}"
-                                                class="navbar-nav-link {{request()->is('report-income-expense-index')? 'active':''}}"><i
+                                                class="navbar-nav-link {{request()->is('budget')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ថ្លៃឈ្នួល</a></li>
 
                     </ul>
@@ -152,6 +152,6 @@
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/tables/datatables/extensions/dataTables.rowGroup.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/km.js"></script>--}}
+
     <script src="{{asset('js/pages/report/buy.js')}}"></script>
 @endpush

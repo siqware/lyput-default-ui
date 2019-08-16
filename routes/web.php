@@ -33,8 +33,8 @@ Route::get('/invoice-index','ProductController@invoicing_index')->name('product.
 Route::get('/stock-detail-data/{id}','InvoiceController@get_stock_id')->name('stock.detail.data');
 Route::get('/invoice-detail-list','InvoiceController@invoice_list')->name('invoice.detail.list');
 /*Expense*/
-Route::resource('expense','ExpenseNoteController');
-Route::get('/expense-list','ExpenseNoteController@expense_list')->name('expense.list');
+Route::resource('budget','BudgetController');
+Route::get('/budget-list','BudgetController@budget_list')->name('budget.list');
 /*Report*/
 Route::get('/report-buy-list','ReportController@buy_list')->name('buy.list');
 Route::get('/report-buy','ReportController@buy')->name('buy');
@@ -42,3 +42,5 @@ Route::get('/report-sell','ReportController@sell')->name('sell');
 Route::get('/report-sell-list','ReportController@sell_list')->name('sell.list');
 Route::get('/report-income-expense','ReportController@exp_inc')->name('inc.exp');
 Route::get('/report-income-expense-index','ReportController@exp_inc_index')->name('inc.exp.index');
+Route::get('/report-budget-index','ReportController@budget_index')->name('report.budget.index');
+Route::get('/report-budget','ReportController@budget_list')->name('report.budget.list');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ExpenseNote;
+use App\Budget;
 use App\IncomeNote;
 use App\InvoiceDetail;
 use App\StockDetail;
@@ -12,13 +12,48 @@ use Yajra\DataTables\DataTables;
 
 class ReportController extends Controller
 {
+    /*budget list*/
+    public function budget_list(Request $request){
+        $input = $request->all();
+        $budget = Budget::whereBetween('created_at',[$input['range']['start'],$input['range']['end']])->where('type','=',$input['range']['type'])->get();
+        return DataTables::of($budget)
+            ->editColumn('created_at',function ($created_at){
+                return Carbon::parse($created_at->created_at)->format('d-m-Y');
+            })
+            ->editColumn('amount',function ($amount){
+                return money_format('$%i', $amount->amount);
+            })
+            ->editColumn('type',function ($type){
+                return $type->type=='inc'?'<span class="badge bg-success-400">ចំណូល</span>':'<span class="badge bg-warning-400">ចំណាយ</span>';
+            })
+            ->addColumn('action',function ($action){
+                return '<div class="list-icons">
+										<div class="dropdown">
+											<a href="#" class="list-icons-item" data-toggle="dropdown">
+												<i class="icon-menu9"></i>
+											</a>
+											<form class="dropdown-menu dropdown-menu-right" method="post" action="'.route('budget.destroy',$action->id).'">
+											'.csrf_field().'
+											<input type="hidden" name="_method" value="delete">
+												<a href="'.route('budget.edit',$action->id).'" class="dropdown-item text-success"><i class="icon-database-edit2"></i> កែប្រែ</a>
+												<button type="submit" class="dropdown-item text-warning"><i class="icon-database-remove"></i> លុប</button>
+											</form>
+										</div>
+									</div>';
+            })
+            ->rawColumns(['action','type'])
+            ->make(true);
+    }
+    public function budget_index(){
+        return view('report.budget');
+    }
     public function exp_inc_index(){
         return view('report.inc_exp');
     }
-    /*salary expense and income note*/
+    /*salary budget and income note*/
     public function exp_inc(Request $request){
         $input = $request->all();
-        $expenses = ExpenseNote::whereBetween('created_at',[$input['start'],$input['end']])->get();
+        $expenses = Budget::whereBetween('created_at',[$input['start'],$input['end']])->where('type','=','exp')->get();
         $incomes = IncomeNote::whereBetween('created_at',[$input['start'],$input['end']])->get();
         $total_expense = 0;
         $total_income = 0;

@@ -49,35 +49,21 @@ var DatatableBasic = function() {
             processing: true,
             serverSide: true,
             ajax: {
-                url: route('expense.list').template,
+                url: route('budget.list').template,
                 method:'get'
             },
             columns: [
                 { data: 'id', name: 'id' },
                 { data: 'desc', name: 'desc' },
                 { data: 'amount', name: 'amount' },
+                { data: 'type', name: 'type' },
                 { data: 'created_at', name: 'created_at' },
                 { data: 'action', name: 'action',searchable:false,orderable:false },
             ],
-            order: [3,'desc'],
-            rowGroup: {
-                startRender: null,
-                endRender: function ( rows, group ) {
-                    var amount = 0;
-                    $.each(rows.data(),function (key,value) {
-                        amount+=parseFloat(value.amount.replace('$',''));
-                    });
-                    return $('<tr/>')
-                        .append( '<td colspan="2" class="bg-info">'+group+'</td>' )
-                        .append( '<td class="pl-3 bg-info">'+formatter.format(amount)+'</td>' )
-                        .append( '<td class="pl-3 bg-info"></td>' )
-                        .append( '<td class="pl-3 bg-info"></td>' );
-                },
-                dataSrc: 'created_at'
-            },
+            order: [1,'desc'],
             "columnDefs": [
-                { className: "pl-3", "targets": [ 0,1,2,3 ] },
-                { className: "text-center", "targets": [ 4 ] },
+                { className: "pl-3", "targets": [ 0,1,2,3,4 ] },
+                { className: "text-center", "targets": [ 5 ] },
             ]
         });
 

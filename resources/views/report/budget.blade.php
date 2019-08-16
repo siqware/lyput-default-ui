@@ -6,7 +6,7 @@
     <div class="page-header page-header-light">
         <div class="page-header-content header-elements-md-inline">
             <div class="page-title d-flex">
-                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">របាយការណ៍</span> - របាយការណ៍ថ្លៃឈ្នួល
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">របាយការណ៍</span> - របាយការណ៍ទិញ
                 </h4>
                 <a href="#" class="ml-auto align-self-center text-default d-md-none" data-toggle="collapse"
                    data-target="#navbar-mobile-top-header"><i class="icon-more"></i></a>
@@ -22,7 +22,7 @@
                                                 class="navbar-nav-link {{request()->is('report-sell')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> លក់</a></li>
                         <li class="nav-item"><a href="{{route('inc.exp.index')}}"
-                                                class="navbar-nav-link {{request()->is('report-income-expense-index')? 'active':''}}"><i
+                                                class="navbar-nav-link {{request()->is('budget')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ថ្លៃឈ្នួល</a></li>
 
                     </ul>
@@ -35,7 +35,7 @@
                 <div class="breadcrumb">
                     <a href="{{route('buy')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>
                         របាយការណ័</a>
-                    <span class="breadcrumb-item active">របាយការណ៍ថ្លៃឈ្នួល</span>
+                    <span class="breadcrumb-item active">របាយការណ៍ទិញ</span>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
     <!-- Scrollable datatable -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">របាយការណ៍ថ្លៃឈ្នួល</h5>
+            <h5 class="card-title">របាយការណ៍ទិញ</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>
@@ -54,7 +54,13 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-2">
+                    <select id="type" class="form-control">
+                        <option value="inc">ចំណូល</option>
+                        <option value="exp">ចំណាយ</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 px-0">
                     <button id="btn-today" class="btn btn-success">ថ្ងៃនេះ</button>
                     <button id="btn-yesterday" class="btn btn-success">ម្សិលមិញ</button>
                     <button id="btn-last-7days" class="btn btn-success">ប្រាំពីថ្ងៃមុន</button>
@@ -62,7 +68,7 @@
                     <button id="btn-this-month" class="btn btn-success">ខែនេះ</button>
                     <button id="btn-last-month" class="btn btn-success">ខែមុន</button>
                 </div>
-                <div class="col-lg-3 d-flex">
+                <div class="col-lg-3 px-0 d-flex">
                     <input type="date" id="start" class="form-control">
                     <input type="date" id="end" class="form-control">
                     <button class="btn btn-success" id="btn-range">បង្ហាញ</button>
@@ -74,7 +80,27 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h3 class="font-weight-semibold mb-0 exp"></h3>
+                                <h3 class="font-weight-semibold mb-0 totalInc"></h3>
+                            </div>
+
+                            <div>
+                                ចំណូល
+                            </div>
+                        </div>
+
+                        <div class="container-fluid">
+                            <div id="members-online"></div>
+                        </div>
+                    </div>
+                    <!-- /members online -->
+
+                </div>
+                <div class="col-lg-3">
+                    <!-- Members online -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <h3 class="font-weight-semibold mb-0 totalExp"></h3>
                             </div>
 
                             <div>
@@ -89,48 +115,20 @@
                     <!-- /members online -->
 
                 </div>
-                <div class="col-lg-3">
-                    <!-- Members online -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h3 class="font-weight-semibold mb-0 inc"></h3>
-                            </div>
-
-                            <div>
-                                ថ្លៃឈ្នួល
-                            </div>
-                        </div>
-
-                        <div class="container-fluid">
-                            <div id="members-online"></div>
-                        </div>
-                    </div>
-                    <!-- /members online -->
-
-                </div>
-                <div class="col-lg-3">
-                    <!-- Members online -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h3 class="font-weight-semibold mb-0 remain"></h3>
-                            </div>
-
-                            <div>
-                                នៅសល់
-                            </div>
-                        </div>
-
-                        <div class="container-fluid">
-                            <div id="members-online"></div>
-                        </div>
-                    </div>
-                    <!-- /members online -->
-
-                </div>
             </div>
         </div>
+        <table class="table table-bordered table-sm table-striped datatable-scroll-y" width="100%">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>ពិពណ៌នា</th>
+                <th>ចំណាយ</th>
+                <th>ប្រភេទ</th>
+                <th>កាលបរិច្ឆេទ</th>
+                <th></th>
+            </tr>
+            </thead>
+        </table>
     </div>
     <!-- /scrollable datatable -->
 @stop
@@ -157,6 +155,5 @@
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/tables/datatables/extensions/dataTables.rowGroup.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-    <script src="{{asset('js/pages/report/inc_exp.js')}}"></script>
+    <script src="{{asset('js/pages/report/budget.js')}}"></script>
 @endpush

@@ -168,6 +168,6 @@
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/tables/datatables/extensions/dataTables.rowGroup.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/km.js"></script>--}}
+
     <script src="{{asset('js/pages/report/sell.js')}}"></script>
 @endpush
