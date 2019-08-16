@@ -76,10 +76,10 @@ class ReportController extends Controller
                 return money_format('$%i', $sell_price->sell_price);
             })
             ->addColumn('sell_amount',function ($sell_amount){
-                return money_format('$%i', $sell_amount->qty*$sell_amount->qty);
+                return money_format('$%i', $sell_amount->qty*$sell_amount->sell_price);
             })
             ->addColumn('pur_amount',function ($pur_amount){
-                return money_format('$%i', $pur_amount->qty*$pur_amount->qty);
+                return money_format('$%i', $pur_amount->qty*$pur_amount->pur_price);
             })
             ->addColumn('action',function ($action){
                 return '<div class="list-icons">

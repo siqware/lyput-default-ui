@@ -21,6 +21,7 @@ class CreateStockDetailsTable extends Migration
             $table->integer('remain_qty');
             $table->float('pur_price');
             $table->float('sell_price');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

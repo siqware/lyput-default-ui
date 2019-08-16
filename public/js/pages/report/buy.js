@@ -120,18 +120,18 @@ var DatatableBasic = function() {
                         var totalPurchaseAmount = 0;
                         $.each(rows.data(),function (key,value) {
                             totalQty+=parseInt(value.qty);
-                            totalSell+=parseFloat(value.pur_price.replace('$',''));
-                            totalPurchase+=parseFloat(value.sell_price.replace('$',''));
+                            totalSell+=parseFloat(value.sell_price.replace('$',''));
+                            totalPurchase+=parseFloat(value.pur_price.replace('$',''));
                             totalSellAmount+=parseFloat(value.sell_amount.replace('$',''));
                             totalPurchaseAmount+=parseFloat(value.pur_amount.replace('$',''));
                         });
                         return $('<tr/>')
                             .append( '<td colspan="2" class="bg-info">'+group+'</td>' )
                             .append( '<td class="pl-3 bg-info">'+totalQty+'</td>' )
-                            .append( '<td class="pl-3 bg-info">'+formatter.format(totalSell)+'</td>' )
-                            .append( '<td class="pl-3 bg-info">'+formatter.format(totalSellAmount)+'</td>' )
-                            .append( '<td class="pl-3 bg-info">'+formatter.format(totalPurchase)+'</td>' )
+                            .append( '<td class="pl-3 bg-info"></td>')
                             .append( '<td class="pl-3 bg-info">'+formatter.format(totalPurchaseAmount)+'</td>' )
+                            .append( '<td class="pl-3 bg-info"></td>')
+                            .append( '<td class="pl-3 bg-info">'+formatter.format(totalSellAmount)+'</td>' )
                             .append( '<td class="pl-3 bg-info"></td>' )
                             .append( '<td class="pl-3 bg-info"></td>' );
                     },

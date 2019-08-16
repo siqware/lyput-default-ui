@@ -13,48 +13,56 @@ use Yajra\DataTables\Facades\DataTables;
 class ProductController extends Controller
 {
     /*check product index*/
-    public function check(){
+    public function check()
+    {
         return view('product.check');
     }
+
     /*search stock product*/
-    public function search_stock(Request $request){
+    public function search_stock(Request $request)
+    {
         $inputTerm = $request->_term;
         $inputData = $request->_data;
         StockDetail::get_search($inputTerm);
         $results = StockDetail::with('product_stock_search')
             ->whereHas('product_stock_search')
-            ->whereNotIn('id',$inputData)
-            ->where('remain_qty','>=',1)
+            ->where('status','<>',0)
+            ->whereNotIn('id', $inputData)
+            ->where('remain_qty', '>=', 1)
             ->get();
         $data = [];
-        foreach ($results as $result){
-            $data[]=[
-                'id'=>$result['id'],
-                'text'=>$result['product_stock_search']['desc'],
+        foreach ($results as $result) {
+            $data[] = [
+                'id' => $result['id'],
+                'text' => $result['product_stock_search']['desc'],
             ];
         }
-        return response()->json(['results'=>$data]);
+        return response()->json(['results' => $data]);
     }
+
     /*Product List*/
-    public function product_stock_detail(){
-        $product =  StockDetail::with('product')->get();
+    public function product_stock_detail()
+    {
+        $product = StockDetail::with('product')
+            ->where('status','<>',0)
+            ->get();
         return DataTables::of($product)
-            ->editColumn('created_at',function ($created_at){
+            ->editColumn('created_at', function ($created_at) {
                 return Carbon::parse($created_at->created_at)->format('d-m-Y h:m:s');
             })
-            ->editColumn('pur_price',function ($pur_price){
+            ->addColumn('sell_amount', function ($sell_amount) {
+                return money_format('$%i', $sell_amount->qty * $sell_amount->sell_price);
+            })
+            ->addColumn('pur_amount', function ($pur_amount) {
+                return money_format('$%i', $pur_amount->qty * $pur_amount->pur_price);
+            })
+            ->editColumn('pur_price', function ($pur_price) {
                 return money_format('$%i', $pur_price->pur_price);
             })
-            ->editColumn('sell_price',function ($sell_price){
+            ->editColumn('sell_price', function ($sell_price) {
                 return money_format('$%i', $sell_price->sell_price);
             })
-            ->addColumn('sell_amount',function ($sell_amount){
-                return money_format('$%i', $sell_amount->qty*$sell_amount->qty);
-            })
-            ->addColumn('pur_amount',function ($pur_amount){
-                return money_format('$%i', $pur_amount->qty*$pur_amount->qty);
-            })
-            ->addColumn('action',function ($action){
+            ->addColumn('action', function ($action) {
                 return '<div class="list-icons">
 										<div class="dropdown">
 											<a href="#" class="list-icons-item" data-toggle="dropdown">
@@ -62,7 +70,7 @@ class ProductController extends Controller
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-right">
-												<a href="'.route('product.edit',$action->id).'" class="dropdown-item text-success"><i class="icon-database-edit2"></i> Edit</a>
+												<a href="' . route('product.edit', $action->id) . '" class="dropdown-item text-success"><i class="icon-database-edit2"></i> Edit</a>
 											</div>
 										</div>
 									</div>';
@@ -70,25 +78,28 @@ class ProductController extends Controller
             ->rawColumns(['action'])
             ->make(true);
     }
+
     /*product check list*/
-    public function check_list(){
-        $product =  StockDetail::with('product')->get();
+    public function check_list()
+    {
+        $product = StockDetail::with('product')->get();
         return DataTables::of($product)
-            ->editColumn('created_at',function ($created_at){
+            ->editColumn('created_at', function ($created_at) {
                 return Carbon::parse($created_at->created_at)->format('d-m-Y h:m:s');
             })
-            ->editColumn('remain_qty',function ($remain_qty){
-                return $remain_qty->remain_qty<=0?'<span class="text-warning">'.$remain_qty->remain_qty.'</span>':'<span class="text-success">'.$remain_qty->remain_qty.'</span>';
+            ->editColumn('remain_qty', function ($remain_qty) {
+                return $remain_qty->remain_qty <= 0 ? '<span class="text-warning">' . $remain_qty->remain_qty . '</span>' : '<span class="text-success">' . $remain_qty->remain_qty . '</span>';
             })
-            ->editColumn('pur_price',function ($pur_price){
+            ->editColumn('pur_price', function ($pur_price) {
                 return money_format('$%i', $pur_price->pur_price);
             })
-            ->editColumn('sell_price',function ($sell_price){
+            ->editColumn('sell_price', function ($sell_price) {
                 return money_format('$%i', $sell_price->sell_price);
             })
             ->rawColumns(['remain_qty'])
             ->make(true);
     }
+
     public function index()
     {
         return view('product.index');
@@ -153,7 +164,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\$id
+     * @param  \App\ $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -164,20 +175,20 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\$id
+     * @param  \App\ $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $product = StockDetail::with('product')->where('id',$id)->get();
-        return view('product.edit',compact('product'));
+        $product = StockDetail::with('product')->where('id', $id)->get();
+        return view('product.edit', compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\$id
+     * @param  \App\ $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -193,7 +204,7 @@ class ProductController extends Controller
             'pur_price' => $input['pur_price'],
             'sell_price' => $input['sell_price'],
         ]);
-        if ($stock){
+        if ($stock) {
             return redirect(route('product.index'));
         }
     }
@@ -201,13 +212,15 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\$id
+     * @param  \App\ $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $product = StockDetail::findOrFail($id)->delete();
-        if ($product){
+        $product = StockDetail::findOrFail($id);
+        $product->status = 0;
+        $product->save();
+        if ($product) {
             return redirect(route('product.index'));
         }
     }
