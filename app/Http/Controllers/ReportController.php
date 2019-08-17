@@ -99,7 +99,10 @@ class ReportController extends Controller
     }
     public function buy_list(Request $request){
         $input = $request->all();
-        $product =  StockDetail::with('product')->whereBetween('created_at',[$input['range']['start'],$input['range']['end']])->get();
+        $product =  StockDetail::with('product')
+            ->whereBetween('created_at',[$input['range']['start'],$input['range']['end']])
+            ->where('status',1)
+            ->get();
         return DataTables::of($product)
             ->editColumn('created_at',function ($created_at){
                 return Carbon::parse($created_at->created_at)->format('d-m-Y h:m:s');
