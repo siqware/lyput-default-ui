@@ -112,6 +112,9 @@ class InvoiceController extends Controller
             $stockDetail->remain_qty -= $value['qty'];
             $stockDetail->save();
         }
+        if ($invoice){
+            return redirect(route('invoice.index'));
+        }
 
     }
 }

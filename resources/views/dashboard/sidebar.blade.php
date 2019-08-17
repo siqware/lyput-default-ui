@@ -66,9 +66,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('budget.index')}}" class="nav-link  {{request()->is('expense*')? 'active':''}}">
+                    <a href="{{route('budget.index')}}" class="nav-link  {{request()->is('budget*')? 'active':''}}">
                         <i class="icon-cash2"></i>
-                        <span>ចំណាយប្រចាំថ្ងៃ</span>
+                        <span>កត់ចំណូលចំណាយ</span>
                     </a>
                 </li>
                 <li class="nav-item">

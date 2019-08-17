@@ -1073,6 +1073,74 @@ input[type=text].noui-height-helper:not(.noUi-target)[data-fouc] {
 *  Styles for tagsinput.js - tags input for Bootstrap
 *
 * ---------------------------------------------------------------------------- */
+.bootstrap-tagsinput {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: inline-block;
+  padding: 0 0 0.125rem 0;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 0px; }
+  .bootstrap-tagsinput input {
+    direction: ltr;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    padding: 0.3125rem 0.875rem;
+    margin-top: 0.125rem;
+    margin-left: 0.125rem;
+    width: auto !important;
+    max-width: 50%;
+    min-width: 4rem;
+    box-shadow: none; }
+  .input-group .bootstrap-tagsinput {
+    width: 1%;
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto; }
+  .bootstrap-tagsinput .twitter-typeahead {
+    width: auto; }
+  .bootstrap-tagsinput .tt-dropdown-menu {
+    margin-top: 0.25rem;
+    min-width: 11.25rem; }
+  .bootstrap-tagsinput .tag {
+    margin: 0.125rem 0 0 0.125rem;
+    padding: 0.3125rem 0.875rem;
+    padding-right: 2.375rem;
+    float: left;
+    position: relative;
+    border-radius: 0px;
+    transition: all ease-in-out 0.15s; }
+    @media (prefers-reduced-motion: reduce) {
+      .bootstrap-tagsinput .tag {
+        transition: none; } }
+    .bootstrap-tagsinput .tag:not([class*=bg-]) {
+      background-color: #eee;
+      color: #333; }
+      .bootstrap-tagsinput .tag:not([class*=bg-]):hover, .bootstrap-tagsinput .tag:not([class*=bg-]):focus {
+        background-color: #03A9F4;
+        color: #fff; }
+    .bootstrap-tagsinput .tag [data-role="remove"] {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 0.875rem;
+      line-height: 1;
+      margin-top: -0.34375rem;
+      opacity: 0.7;
+      transition: opacity ease-in-out 0.15s; }
+      @media (prefers-reduced-motion: reduce) {
+        .bootstrap-tagsinput .tag [data-role="remove"] {
+          transition: none; } }
+      .bootstrap-tagsinput .tag [data-role="remove"]:hover {
+        opacity: 1; }
+      .bootstrap-tagsinput .tag [data-role="remove"]:after {
+        content: "";
+        font-family: "icomoon";
+        display: block;
+        font-size: 0.6875rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+
 /* ------------------------------------------------------------------------------
 *
 *  # Touchspin spinners
@@ -1771,6 +1839,118 @@ input[type=text].noui-height-helper:not(.noUi-target)[data-fouc] {
  *  Styles for jQuery UI slider pips extension
  *
  * ---------------------------------------------------------------------------- */
+.ui-slider-pips.ui-slider-horizontal {
+  margin-bottom: 2.0625rem;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem; }
+
+.ui-slider-pips .ui-slider-label,
+.ui-slider-pips .ui-slider-pip-hide {
+  display: none; }
+
+.ui-slider-pips .ui-slider-pip-label .ui-slider-label {
+  display: block; }
+
+.ui-slider-pips .ui-slider-pip {
+  height: 0.6875rem;
+  line-height: 1;
+  font-size: 0.6875rem;
+  width: 1.25rem;
+  margin-left: -0.6875rem;
+  position: absolute;
+  overflow: visible;
+  text-align: center;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.ui-slider-pips .ui-slider-line {
+  background-color: #777;
+  width: 0.0625rem;
+  height: 0.1875rem;
+  position: absolute;
+  left: 50%; }
+
+.ui-slider-pips .ui-slider-label {
+  position: absolute;
+  top: 0.66667rem;
+  left: 50%;
+  width: 1.25rem;
+  margin-left: -0.625rem;
+  white-space: nowrap;
+  color: #777; }
+
+.ui-slider-pips.ui-slider-vertical {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem; }
+  .ui-slider-pips.ui-slider-vertical .ui-slider-pip {
+    text-align: left;
+    top: auto;
+    left: 1rem;
+    margin-left: 0;
+    height: auto; }
+  .ui-slider-pips.ui-slider-vertical .ui-slider-line {
+    width: 0.1875rem;
+    height: 0.0625rem;
+    position: absolute;
+    top: 50%;
+    left: 0; }
+  .ui-slider-pips.ui-slider-vertical .ui-slider-label {
+    top: 50%;
+    margin-left: 0;
+    margin-top: -0.34375rem;
+    left: 0.66667rem; }
+
+.ui-slider-float .ui-slider-handle:focus,
+.ui-slider-float .ui-slider-handle:focus .ui-slider-tip,
+.ui-slider-float .ui-slider-handle:focus .ui-slider-tip-label {
+  outline: 0; }
+
+.ui-slider-float .ui-slider-tip,
+.ui-slider-float .ui-slider-tip-label {
+  position: absolute;
+  visibility: hidden;
+  top: -3rem;
+  display: block;
+  left: 50%;
+  background-color: #000;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 0.1875rem;
+  transition: all ease-in-out 0.15s 0.15s; }
+  @media (prefers-reduced-motion: reduce) {
+    .ui-slider-float .ui-slider-tip,
+    .ui-slider-float .ui-slider-tip-label {
+      transition: none; } }
+
+.ui-slider-float .ui-slider-handle:hover .ui-slider-tip,
+.ui-slider-float .ui-slider-handle:focus .ui-slider-tip {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.15s; }
+
+.ui-slider-float .ui-slider-tip:after,
+.ui-slider-float .ui-slider-pip .ui-slider-tip-label:after {
+  content: '';
+  border: 0.25rem solid transparent;
+  border-top-color: #000;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  margin-left: -0.25rem;
+  width: 0;
+  height: 0; }
+
 /* ------------------------------------------------------------------------------
  *
  *  # NoUI slider
@@ -1792,6 +1972,148 @@ input[type=text].noui-height-helper:not(.noUi-target)[data-fouc] {
  *  Separate styles for jQuery UI library. Component's interactions
  *
  * ---------------------------------------------------------------------------- */
+.ui-draggable-handle,
+.ui-sortable-handle {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.ui-sortable .ui-state-disabled {
+  color: #999;
+  cursor: default;
+  opacity: 0.75; }
+
+.sortable-placeholder {
+  position: relative; }
+  .sortable-placeholder:before {
+    content: '';
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%; }
+
+.card + .sortable-placeholder {
+  margin-bottom: 1.25rem; }
+  .sidebar .card + .sortable-placeholder {
+    margin-bottom: 0; }
+
+.sortable-placeholder + .card {
+  margin-top: 1.25rem; }
+  .sidebar .sortable-placeholder + .card {
+    margin-top: 0; }
+
+.card-group > .sortable-placeholder:before {
+  border-radius: 0.1875rem; }
+
+.sidebar .sortable-placeholder:before {
+  border-left: 0;
+  border-right: 0; }
+
+.sidebar-dark .sortable-placeholder:before {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.sidebar-dark .card:not([class*=bg-]):not(.fixed-top).ui-sortable-helper {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.sidebar-light .sortable-placeholder:before {
+  background-color: #fafafa; }
+
+.sidebar-light .card:not([class*=bg-]):not(.fixed-top).ui-sortable-helper {
+  background-color: #fff; }
+
+.table .ui-sortable-helper {
+  width: 100%;
+  display: table; }
+
+.table .sortable-placeholder {
+  margin: 0; }
+  .table .sortable-placeholder:before {
+    content: none; }
+
+.table.ui-sortable {
+  position: relative; }
+
+.ui-resizable-handle {
+  position: absolute;
+  font-size: 0;
+  display: block;
+  -ms-touch-action: none;
+      touch-action: none; }
+  .ui-resizable-handle.ui-icon {
+    display: inline-block;
+    border-style: solid;
+    border-width: 0 0 0.375rem 0.375rem;
+    border-color: transparent transparent #333 transparent; }
+  .ui-resizable-disabled .ui-resizable-handle,
+  .ui-resizable-autohide .ui-resizable-handle {
+    display: none; }
+
+.ui-resizable-n {
+  cursor: n-resize;
+  height: 0.4375rem;
+  width: 100%;
+  top: -0.3125rem;
+  left: 0; }
+
+.ui-resizable-s {
+  cursor: s-resize;
+  height: 0.4375rem;
+  width: 100%;
+  bottom: -0.3125rem;
+  left: 0; }
+
+.ui-resizable-e {
+  cursor: e-resize;
+  width: 0.4375rem;
+  right: -0.3125rem;
+  top: 0;
+  height: 100%; }
+
+.ui-resizable-w {
+  cursor: w-resize;
+  width: 0.4375rem;
+  left: -0.3125rem;
+  top: 0;
+  height: 100%; }
+
+.ui-resizable-se {
+  cursor: se-resize;
+  right: 0.0625rem;
+  bottom: 0.0625rem; }
+
+.ui-resizable-sw {
+  cursor: sw-resize;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  left: -0.3125rem;
+  bottom: -0.3125rem; }
+
+.ui-resizable-nw {
+  cursor: nw-resize;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  left: -0.3125rem;
+  top: -0.3125rem; }
+
+.ui-resizable-ne {
+  cursor: ne-resize;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  right: -0.3125rem;
+  top: -0.3125rem; }
+
+.ui-selectable {
+  -ms-touch-action: none;
+      touch-action: none; }
+
+.ui-selectable-helper {
+  position: absolute;
+  z-index: 100;
+  border: 1px dashed #333; }
+
 /* ------------------------------------------------------------------------------
  *
  *  # jQuery UI Widgets
@@ -1799,6 +2121,1002 @@ input[type=text].noui-height-helper:not(.noUi-target)[data-fouc] {
  *  Styles for jQuery UI widgets
  *
  * ---------------------------------------------------------------------------- */
+.ui-accordion .ui-accordion-header {
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  outline: 0;
+  position: relative;
+  background-color: #fff;
+  padding: 0.9375rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-top: 0.5rem;
+  border-radius: 0px; }
+  .ui-accordion .ui-accordion-header:first-child {
+    margin-top: 0; }
+  .ui-accordion .ui-accordion-header.ui-accordion-header-active {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
+  .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    margin-top: -0.5rem; }
+    .ui-accordion .ui-accordion-header .ui-accordion-header-icon:before {
+      content: "";
+      font-family: "icomoon";
+      display: block;
+      width: 1rem;
+      font-size: 1rem;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+
+.ui-accordion .ui-accordion-header-active .ui-accordion-header-icon:before {
+  content: ""; }
+
+.ui-accordion .ui-accordion-icons {
+  padding-right: 3.5rem; }
+
+.ui-accordion .ui-accordion-content {
+  padding: 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 0;
+  overflow: auto;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px; }
+
+.accordion-sortable-group + .accordion-sortable-group {
+  margin-top: 0.5rem; }
+
+.ui-autocomplete {
+  position: absolute;
+  display: none;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  max-height: 250px;
+  overflow: auto; }
+  .ui-autocomplete .ui-autocomplete-category {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.6667;
+    text-transform: uppercase;
+    font-weight: 700; }
+    .ui-autocomplete .ui-autocomplete-category ~ .ui-menu-item .ui-menu-item-wrapper {
+      padding-left: 2rem; }
+
+.ui-autocomplete-processing:after {
+  content: "";
+  font-family: "icomoon";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0.875rem;
+  width: 1rem;
+  text-align: right;
+  margin-top: -0.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  color: inherit;
+  -webkit-animation: rotation 1s linear infinite;
+          animation: rotation 1s linear infinite;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.input-group .ui-autocomplete-input + .input-group-append > .btn,
+.input-group .ui-autocomplete-input + .input-group-append > .ui-button,
+.input-group .ui-datepicker-buttonpane .ui-autocomplete-input + .input-group-append > button,
+.ui-datepicker-buttonpane .input-group .ui-autocomplete-input + .input-group-append > button {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.ui-button, .ui-datepicker-buttonpane button {
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 0.4375rem 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.5385;
+  border-radius: 0px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+  @media (prefers-reduced-motion: reduce) {
+    .ui-button, .ui-datepicker-buttonpane button {
+      transition: none; } }
+  .ui-button:focus, .ui-datepicker-buttonpane button:focus {
+    outline: 0; }
+  .ui-button:not([class*=bg-]):hover, .ui-datepicker-buttonpane button:not([class*=bg-]):hover, .ui-button:not([class*=bg-]):focus, .ui-datepicker-buttonpane button:not([class*=bg-]):focus, .ui-button:not([class*=bg-]):active, .ui-datepicker-buttonpane button:not([class*=bg-]):active {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd; }
+  .ui-button.ui-state-disabled, .ui-datepicker-buttonpane button.ui-state-disabled {
+    cursor: default;
+    opacity: 0.65;
+    box-shadow: none; }
+  .ui-button[class*=bg-]:not(.bg-transparent):not(.bg-white):not(.bg-light):hover, .ui-datepicker-buttonpane button[class*=bg-]:not(.bg-transparent):not(.bg-white):not(.bg-light):hover, .ui-button[class*=bg-]:not(.bg-transparent):not(.bg-white):not(.bg-light):focus, .ui-datepicker-buttonpane button[class*=bg-]:not(.bg-transparent):not(.bg-white):not(.bg-light):focus {
+    color: #fff;
+    box-shadow: 0 0 0 62.5rem rgba(0, 0, 0, 0.075) inset; }
+  .ui-button[class*=bg-]:not(.bg-transparent):not(.bg-white):not(.bg-light):active, .ui-datepicker-buttonpane button[class*=bg-]:not(.bg-transparent):not(.bg-white):not(.bg-light):active {
+    box-shadow: 0 0 0 62.5rem rgba(0, 0, 0, 0.075) inset; }
+  .ui-button.ui-button-link, .ui-datepicker-buttonpane button.ui-button-link {
+    background-color: transparent;
+    border-color: transparent; }
+    .ui-button.ui-button-link:hover, .ui-datepicker-buttonpane button.ui-button-link:hover, .ui-button.ui-button-link:focus, .ui-datepicker-buttonpane button.ui-button-link:focus {
+      color: #0a6ebd; }
+    .ui-button.ui-button-link:hover, .ui-datepicker-buttonpane button.ui-button-link:hover, .ui-button.ui-button-link:focus, .ui-datepicker-buttonpane button.ui-button-link:focus, .ui-button.ui-button-link:active, .ui-datepicker-buttonpane button.ui-button-link:active {
+      box-shadow: none; }
+  .ui-button::-moz-focus-inner, .ui-datepicker-buttonpane button::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  .ui-button .ui-button-icon-space, .ui-datepicker-buttonpane button .ui-button-icon-space {
+    display: inline-block;
+    width: 0.625rem; }
+
+.ui-button-icon-only {
+  text-indent: -9999px;
+  padding-left: 1.06252rem;
+  padding-right: 1.06252rem;
+  overflow: hidden; }
+  .ui-button-icon-only .ui-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-indent: 0;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .ui-button-icon-only .ui-button-icon-space,
+  .ui-button-icon-only .ui-button-text {
+    display: none; }
+
+.ui-controlgroup {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative; }
+  .ui-controlgroup .ui-button, .ui-controlgroup .ui-datepicker-buttonpane button, .ui-datepicker-buttonpane .ui-controlgroup button {
+    border-radius: 0;
+    margin-left: -1px;
+    float: left; }
+  .ui-controlgroup .ui-button:first-child, .ui-controlgroup .ui-datepicker-buttonpane button:first-child, .ui-datepicker-buttonpane .ui-controlgroup button:first-child,
+  .ui-controlgroup .ui-helper-hidden-accessible:first-child + .ui-button,
+  .ui-controlgroup .ui-datepicker-buttonpane .ui-helper-hidden-accessible:first-child + button,
+  .ui-datepicker-buttonpane .ui-controlgroup .ui-helper-hidden-accessible:first-child + button {
+    margin-left: 0; }
+  .ui-controlgroup .ui-button:first-child, .ui-controlgroup .ui-datepicker-buttonpane button:first-child, .ui-datepicker-buttonpane .ui-controlgroup button:first-child,
+  .ui-controlgroup .ui-helper-hidden-accessible:first-child + .ui-button:not(:last-child),
+  .ui-controlgroup .ui-datepicker-buttonpane .ui-helper-hidden-accessible:first-child + button:not(:last-child),
+  .ui-datepicker-buttonpane .ui-controlgroup .ui-helper-hidden-accessible:first-child + button:not(:last-child) {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; }
+  .ui-controlgroup .ui-button:last-of-type, .ui-controlgroup .ui-datepicker-buttonpane button:last-of-type, .ui-datepicker-buttonpane .ui-controlgroup button:last-of-type {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px; }
+
+.ui-checkboxradio-label.ui-checkboxradio-checked {
+  background-color: #f5f5f5;
+  color: #333;
+  border-color: #ddd; }
+  .ui-checkboxradio-label.ui-checkboxradio-checked[class*=bg-]:not(.bg-white):not(.bg-light):not(.bg-transparent) {
+    box-shadow: 0 0 0 62.5rem rgba(0, 0, 0, 0.125) inset; }
+
+.ui-checkboxradio-label.ui-checkboxradio-disabled {
+  pointer-events: none; }
+
+.ui-datepicker {
+  min-width: 270px;
+  padding: 0.9375rem; }
+  .ui-datepicker:not(.ui-datepicker-inline) {
+    display: none;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    z-index: 1070 !important;
+    border-radius: 0px;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); }
+  .sidebar .ui-datepicker {
+    min-width: 0; }
+  .ui-datepicker a {
+    transition: all ease-in-out 0.15s; }
+    @media (prefers-reduced-motion: reduce) {
+      .ui-datepicker a {
+        transition: none; } }
+  .ui-datepicker .ui-datepicker-header {
+    position: relative; }
+  .ui-datepicker .ui-datepicker-title {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    padding-top: 0.46875rem;
+    padding-bottom: 0.46875rem;
+    font-size: 0.9375rem;
+    margin-left: 2.8125rem;
+    margin-right: 2.8125rem; }
+    .ui-datepicker .ui-datepicker-title .ui-datepicker-month {
+      font-weight: 500; }
+    .ui-datepicker .ui-datepicker-title .ui-datepicker-year {
+      font-size: 85%;
+      color: #999;
+      margin-left: 0.46875rem; }
+    .ui-datepicker .ui-datepicker-title select {
+      outline: 0;
+      height: calc(1.6667em + 0.625rem + 2px);
+      border-color: #ddd;
+      -ms-flex: 1;
+          flex: 1; }
+      .ui-datepicker .ui-datepicker-title select.ui-datepicker-month, .ui-datepicker .ui-datepicker-title select.ui-datepicker-year {
+        font-size: 0.8125rem;
+        font-weight: 400;
+        color: #333; }
+  .ui-datepicker .ui-datepicker-prev,
+  .ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.9375rem;
+    line-height: 1;
+    color: #333;
+    padding: 0.4375rem;
+    cursor: pointer;
+    border-radius: 0px; }
+    .ui-datepicker .ui-datepicker-prev:after,
+    .ui-datepicker .ui-datepicker-next:after {
+      font-family: "icomoon";
+      display: block;
+      font-size: 1rem;
+      width: 1rem;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+    .ui-datepicker .ui-datepicker-prev span,
+    .ui-datepicker .ui-datepicker-next span {
+      display: none; }
+  .ui-datepicker .ui-datepicker-prev {
+    left: 0; }
+    .ui-datepicker .ui-datepicker-prev:after {
+      content: ""; }
+  .ui-datepicker .ui-datepicker-next {
+    right: 0; }
+    .ui-datepicker .ui-datepicker-next:after {
+      content: ""; }
+  .ui-datepicker .ui-datepicker-prev-hover,
+  .ui-datepicker .ui-datepicker-next-hover {
+    color: #333;
+    background-color: #f5f5f5; }
+  .ui-datepicker .ui-datepicker-calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0; }
+    .ui-datepicker .ui-datepicker-calendar th {
+      text-align: center;
+      font-weight: 400;
+      padding-top: 0.9375rem;
+      padding-bottom: 0.4375rem;
+      font-size: 0.75rem;
+      color: #999; }
+    .ui-datepicker .ui-datepicker-calendar td {
+      text-align: center; }
+      .ui-datepicker .ui-datepicker-calendar td span,
+      .ui-datepicker .ui-datepicker-calendar td a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        min-width: 2.12503rem;
+        color: #333;
+        padding: 0.4375rem;
+        border-radius: 0px; }
+      .ui-datepicker .ui-datepicker-calendar td .ui-state-hover {
+        color: #333;
+        background-color: #f5f5f5; }
+      .ui-datepicker .ui-datepicker-calendar td.ui-state-disabled a,
+      .ui-datepicker .ui-datepicker-calendar td.ui-state-disabled span {
+        color: #999;
+        background-color: transparent; }
+      .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-week-col {
+        min-width: 2.12503rem;
+        padding: 0.4375rem;
+        color: #999; }
+      .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day .ui-state-active {
+        color: #fff;
+        background-color: #26A69A; }
+      .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today .ui-state-highlight {
+        color: #333;
+        background-color: #f5f5f5; }
+        .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today .ui-state-highlight:after {
+          content: "";
+          position: absolute;
+          top: 0.14583rem;
+          right: 0.14583rem;
+          border-top: 0.4375rem solid #767676;
+          border-left: 0.4375rem solid transparent;
+          width: 0;
+          height: 0; }
+    .ui-datepicker .ui-datepicker-calendar .ui-datepicker-other-month .ui-priority-secondary {
+      color: #999; }
+    .ui-datepicker .ui-datepicker-calendar .ui-datepicker-week-col {
+      text-align: left; }
+  .ui-datepicker.ui-datepicker-multi {
+    width: auto !important; }
+
+.ui-datepicker-buttonpane {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding-top: 0.9375rem; }
+
+.ui-datepicker-inline {
+  max-width: 100%;
+  overflow-x: auto; }
+
+.ui-datepicker-trigger {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  z-index: 4;
+  padding: 6px;
+  cursor: pointer; }
+
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%; }
+
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left; }
+  .ui-datepicker-multi .ui-datepicker-group + .ui-datepicker-group {
+    padding-left: 0.9375rem; }
+
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 46%; }
+
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%; }
+
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%; }
+
+.ui-dialog {
+  position: fixed;
+  top: 0;
+  /*rtl:ignore*/
+  left: 0;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+  border-radius: 0px-lg;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); }
+  @media (max-width: 767.98px) {
+    .ui-dialog {
+      width: 90% !important; } }
+
+.ui-dialog-titlebar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 1.25rem 1.25rem;
+  padding-bottom: 0; }
+  .ui-draggable .ui-dialog-titlebar {
+    cursor: move; }
+
+.ui-dialog-title {
+  display: block;
+  font-size: 0.9375rem;
+  line-height: 1.5385; }
+
+.ui-dialog-titlebar-close {
+  margin-left: auto;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  font-size: 0;
+  text-indent: 0; }
+  .ui-dialog-titlebar-close:after {
+    content: "";
+    font-family: "icomoon";
+    display: block;
+    width: 0.8125rem;
+    font-size: 0.8125rem;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .ui-dialog-titlebar-close:hover, .ui-dialog-titlebar-close:focus {
+    background-color: transparent !important;
+    box-shadow: none; }
+
+.ui-dialog-content {
+  position: relative;
+  overflow: auto;
+  padding: 1.25rem; }
+  .ui-dialog-content .form-group:last-child,
+  .ui-dialog-content p:last-child {
+    margin-bottom: 0; }
+
+.ui-dialog-buttonpane {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  padding: 1.25rem;
+  padding-top: 0; }
+  .ui-dialog-buttonpane button + button {
+    margin-left: 0.625rem; }
+
+.ui-menu {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: block;
+  outline: none;
+  min-width: 11.25rem;
+  white-space: nowrap;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 0px;
+  z-index: 1000;
+  border-radius: 0px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); }
+  .ui-menu .ui-menu {
+    position: absolute;
+    top: -0.4375rem !important; }
+  .ui-menu .ui-menu-item {
+    margin: 0;
+    position: relative; }
+    .ui-menu .ui-menu-item i {
+      margin-right: 1rem; }
+  .ui-menu .ui-menu-item-wrapper {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+        align-items: flex-start;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    outline: 0;
+    color: #333;
+    overflow: hidden;
+    transition: all ease-in-out 0.15s; }
+    @media (prefers-reduced-motion: reduce) {
+      .ui-menu .ui-menu-item-wrapper {
+        transition: none; } }
+    .ui-menu .ui-menu-item-wrapper > .ui-menu-icon {
+      position: absolute;
+      top: 50%;
+      margin-top: -0.5rem;
+      right: 1rem; }
+      .ui-menu .ui-menu-item-wrapper > .ui-menu-icon:after {
+        content: "";
+        font-family: "icomoon";
+        font-size: 1rem;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+  .ui-menu .ui-menu-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+        align-items: flex-start;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.6667;
+    text-transform: uppercase;
+    color: #999;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem; }
+    .ui-menu .ui-menu-header.highlight {
+      margin-top: 0;
+      background-color: #f8f8f8; }
+  .ui-menu .ui-menu-item + .highlight,
+  .ui-menu .highlight + .ui-menu-item {
+    margin-top: 0.5rem; }
+  .ui-menu .ui-menu-item-wrapper > i,
+  .ui-menu .ui-menu-header > i {
+    top: 0;
+    margin-top: 0.12502rem;
+    margin-right: 1rem; }
+  .ui-menu .ui-menu-divider {
+    margin: 0.5rem 0;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+    border-top: 1px solid #ddd; }
+  .ui-menu .ui-state-disabled .ui-menu-item-wrapper {
+    color: #999;
+    background-color: transparent;
+    cursor: default; }
+  .ui-menu .ui-state-focus,
+  .ui-menu .ui-state-active {
+    color: #333;
+    background-color: #f5f5f5; }
+
+.ui-progressbar {
+  display: -ms-flexbox;
+  display: flex;
+  height: 1.125rem;
+  overflow: hidden;
+  font-size: 0.60938rem;
+  background-color: #eee;
+  border-radius: 0px;
+  box-shadow: inset 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.1); }
+
+.ui-progressbar-value {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  color: #fff;
+  text-align: center;
+  background-color: #2196F3;
+  background-size: 1.125rem 1.125rem;
+  transition: width 0.6s ease; }
+  @media (prefers-reduced-motion: reduce) {
+    .ui-progressbar-value {
+      transition: none; } }
+  .ui-progressbar-striped .ui-progressbar-value {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
+  .ui-progressbar-active .ui-progressbar-value {
+    -webkit-animation: progress-bar-stripes 1s linear infinite;
+            animation: progress-bar-stripes 1s linear infinite; }
+  .ui-progressbar-indeterminate .ui-progressbar-value {
+    background-image: none; }
+
+.ui-selectmenu-menu {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  /*rtl:ignore*/
+  left: 0;
+  display: none; }
+  .ui-selectmenu-menu .ui-menu {
+    max-height: 340px;
+    overflow-y: auto;
+    overflow-x: hidden; }
+    .ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup {
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1.6667;
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      height: auto;
+      border: 0; }
+      .ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup ~ .ui-menu-item .ui-menu-item-wrapper {
+        padding-left: 2rem; }
+
+.ui-selectmenu-open {
+  display: block; }
+
+.ui-selectmenu-button {
+  text-decoration: none;
+  text-align: left;
+  outline: 0; }
+  .ui-selectmenu-button:not(.ui-controlgroup-item) {
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 0px; }
+  .ui-selectmenu-button:not(.ui-button-icon-only) {
+    padding: 0.4375rem 0.875rem;
+    padding-right: 2.75rem; }
+  .ui-selectmenu-button:hover, .ui-selectmenu-button:focus {
+    box-shadow: 0 0 0 62.5rem rgba(0, 0, 0, 0.01) inset; }
+  .ui-selectmenu-button:not([class*=bg-]):hover, .ui-selectmenu-button:not([class*=bg-]):focus {
+    background-color: #fff; }
+  .ui-selectmenu-button:after {
+    content: "";
+    font-family: "icomoon";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0.875rem;
+    text-align: right;
+    margin-top: -0.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .ui-selectmenu-button .ui-selectmenu-text {
+    display: block;
+    text-transform: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .ui-selectmenu-button.ui-selectmenu-button-open {
+    box-shadow: 0 0 0 62.5rem rgba(0, 0, 0, 0.01) inset; }
+
+.ui-selectmenu-disabled {
+  cursor: default;
+  background-color: #fafafa; }
+  .ui-selectmenu-disabled:hover, .ui-selectmenu-disabled:focus {
+    box-shadow: none; }
+
+.ui-selectmenu-lg .ui-selectmenu-button .ui-selectmenu-text {
+  padding: 0.5625rem 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.4286; }
+
+.ui-selectmenu-sm .ui-selectmenu-button .ui-selectmenu-text {
+  padding: 0.3125rem 0.75rem;
+  padding-right: 2.5rem;
+  font-size: 0.75rem;
+  line-height: 1.6667; }
+
+.ui-selectmenu-images .ui-menu-item span {
+  display: inline-block;
+  margin-right: 1rem;
+  background-size: 1.25003rem 1.25003rem;
+  float: left;
+  width: 1.25003rem;
+  height: 1.25003rem;
+  border-radius: 0px; }
+
+.ui-selectmenu-images .demo-img-amazon {
+  background: url("../../../../../../global_assets/images/brands/amazon.png") no-repeat; }
+
+.ui-selectmenu-images .demo-img-youtube {
+  background: url("../../../../../../global_assets/images/brands/youtube.png") no-repeat; }
+
+.ui-selectmenu-images .demo-img-twitter {
+  background: url("../../../../../../global_assets/images/brands/twitter.png") no-repeat; }
+
+.ui-selectmenu-images .demo-img-bing {
+  background: url("../../../../../../global_assets/images/brands/bing.png") no-repeat; }
+
+.ui-selectmenu-images .demo-img-spotify {
+  background: url("../../../../../../global_assets/images/brands/spotify.png") no-repeat; }
+
+.ui-slider {
+  position: relative;
+  text-align: left;
+  background-color: #eee;
+  border-radius: 0px-round;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1); }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    outline: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0px-round;
+    transition: background-color ease-in-out 0.15s; }
+    @media (prefers-reduced-motion: reduce) {
+      .ui-slider .ui-slider-handle {
+        transition: none; } }
+    .ui-slider .ui-slider-handle.ui-state-hover, .ui-slider .ui-slider-handle.ui-state-focus {
+      background-color: #fafafa; }
+      .ui-slider .ui-slider-handle.ui-state-hover:after, .ui-slider .ui-slider-handle.ui-state-focus:after {
+        background-color: #555; }
+    .ui-slider .ui-slider-handle:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -0.1875rem;
+      margin-left: -0.1875rem;
+      background-color: #333;
+      width: 0.375rem;
+      height: 0.375rem;
+      border-radius: 0px-round;
+      transition: background-color ease-in-out 0.15s; }
+      @media (prefers-reduced-motion: reduce) {
+        .ui-slider .ui-slider-handle:after {
+          transition: none; } }
+  .ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    background-color: #607D8B;
+    border-radius: 0px-round; }
+  .ui-slider.ui-slider-disabled {
+    opacity: 0.75; }
+    .ui-slider.ui-slider-disabled .ui-slider-handle {
+      cursor: default; }
+
+.ui-slider-horizontal {
+  height: 0.375rem; }
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -0.375rem;
+    /*rtl:ignore*/
+    margin-left: -0.5625rem; }
+  .ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 100%; }
+  .ui-slider-horizontal .ui-slider-range-min {
+    left: 0; }
+  .ui-slider-horizontal .ui-slider-range-max {
+    right: 0; }
+
+.ui-slider-vertical {
+  width: 0.375rem;
+  height: 150px;
+  display: inline-block;
+  margin: 0 0.625rem; }
+  .ui-slider-vertical .ui-slider-handle {
+    left: -0.375rem;
+    margin-bottom: -0.5625rem; }
+  .ui-slider-vertical .ui-slider-range {
+    left: 0;
+    width: 100%; }
+  .ui-slider-vertical .ui-slider-range-min {
+    bottom: 0; }
+  .ui-slider-vertical .ui-slider-range-max {
+    top: 0; }
+
+.ui-slider-solid .ui-slider-handle:after {
+  background-color: #fff;
+  transition: opacity ease-in-out 0.15s; }
+  @media (prefers-reduced-motion: reduce) {
+    .ui-slider-solid .ui-slider-handle:after {
+      transition: none; } }
+
+.ui-slider-solid .ui-slider-handle.ui-state-hover:after, .ui-slider-solid .ui-slider-handle.ui-state-active:after {
+  background-color: #fff;
+  opacity: 0.75; }
+
+.ui-handle-white .ui-slider-handle:after {
+  content: none; }
+
+.ui-slider-lg .ui-slider-handle {
+  width: 1.5rem;
+  height: 1.5rem; }
+  .ui-slider-lg .ui-slider-handle:after {
+    margin-top: -0.25rem;
+    margin-left: -0.25rem;
+    width: 0.5rem;
+    height: 0.5rem; }
+
+.ui-slider-lg.ui-slider-horizontal {
+  height: 0.5rem; }
+  .ui-slider-lg.ui-slider-horizontal .ui-slider-handle {
+    top: -0.5rem;
+    /*rtl:ignore*/
+    margin-left: -0.75rem; }
+
+.ui-slider-lg.ui-slider-vertical {
+  width: 0.5rem; }
+  .ui-slider-lg.ui-slider-vertical .ui-slider-handle {
+    left: -0.5rem;
+    margin-bottom: -0.75rem; }
+
+.ui-slider-sm .ui-slider-handle {
+  width: 0.75rem;
+  height: 0.75rem; }
+  .ui-slider-sm .ui-slider-handle:after {
+    margin-top: -0.125rem;
+    margin-left: -0.125rem;
+    width: 0.25rem;
+    height: 0.25rem; }
+
+.ui-slider-sm.ui-slider-horizontal {
+  height: 0.25rem; }
+  .ui-slider-sm.ui-slider-horizontal .ui-slider-handle {
+    top: -0.25rem;
+    /*rtl:ignore*/
+    margin-left: -0.375rem; }
+
+.ui-slider-sm.ui-slider-vertical {
+  width: 0.25rem; }
+  .ui-slider-sm.ui-slider-vertical .ui-slider-handle {
+    left: -0.25rem;
+    margin-bottom: -0.375rem; }
+
+.ui-slider-primary .ui-slider-range,
+.ui-slider-solid.ui-slider-primary .ui-slider-handle {
+  background-color: #2196F3;
+  border-color: #2196F3; }
+
+.ui-slider-danger .ui-slider-range,
+.ui-slider-solid.ui-slider-danger .ui-slider-handle {
+  background-color: #F44336;
+  border-color: #F44336; }
+
+.ui-slider-success .ui-slider-range,
+.ui-slider-solid.ui-slider-success .ui-slider-handle {
+  background-color: #4CAF50;
+  border-color: #4CAF50; }
+
+.ui-slider-warning .ui-slider-range,
+.ui-slider-solid.ui-slider-warning .ui-slider-handle {
+  background-color: #FF7043;
+  border-color: #FF7043; }
+
+.ui-slider-info .ui-slider-range,
+.ui-slider-solid.ui-slider-info .ui-slider-handle {
+  background-color: #00BCD4;
+  border-color: #00BCD4; }
+
+.ui-spinner {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+
+.ui-spinner-input {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.ui-spinner-button {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  border-radius: 0; }
+  .ui-spinner-button:after {
+    font-family: "icomoon";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1rem;
+    font-size: 1rem;
+    line-height: 1;
+    text-indent: 0;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .ui-spinner-button:last-child {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px; }
+  .ui-spinner-button > span {
+    display: none; }
+  .ui-spinner-button + .ui-spinner-button {
+    border-left: 0; }
+
+.ui-spinner-up:after {
+  content: ""; }
+
+.ui-spinner-down:after {
+  content: ""; }
+
+.ui-tabs {
+  position: relative; }
+  .ui-tabs .ui-tabs-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #ddd; }
+  .ui-tabs .ui-tabs-tab {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin-bottom: -1px; }
+  .ui-tabs .ui-tabs-anchor {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: start;
+        align-items: flex-start;
+    color: #777;
+    padding: 0.625rem 1.25rem;
+    border: 1px solid transparent;
+    transition: all ease-in-out 0.15s; }
+    @media (prefers-reduced-motion: reduce) {
+      .ui-tabs .ui-tabs-anchor {
+        transition: none; } }
+    .ui-tabs .ui-tabs-anchor:before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      transition: background-color ease-in-out 0.15s; }
+      @media (prefers-reduced-motion: reduce) {
+        .ui-tabs .ui-tabs-anchor:before {
+          transition: none; } }
+    .ui-tabs .ui-tabs-anchor i {
+      top: 0;
+      margin-top: 0.12502rem; }
+  .ui-tabs .ui-state-hover .ui-tabs-anchor:not(.ui-state-disabled),
+  .ui-tabs .ui-state-focus .ui-tabs-anchor:not(.ui-state-disabled) {
+    color: #333; }
+  .ui-tabs .ui-tabs-active .ui-tabs-anchor {
+    color: #333;
+    background-color: #fff;
+    border-color: #ddd #ddd #fff; }
+    .ui-tabs .ui-tabs-active .ui-tabs-anchor:before {
+      background-color: #2196F3; }
+  .ui-tabs .ui-state-disabled {
+    color: #999;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: default; }
+  .ui-tabs .ui-sortable-helper:not(.ui-tabs-active) .ui-tabs-anchor {
+    border-color: #ddd; }
+  .ui-tabs .ui-tabs-panel {
+    display: block; }
+
+.ui-tooltip {
+  position: absolute;
+  z-index: 1070;
+  max-width: 200px;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 0px; }
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  /*rtl:ignore*/
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%; }
+
+.ui-helper-hidden {
+  display: none; }
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none; }
+
+.ui-helper-clearfix::after {
+  display: block;
+  clear: both;
+  content: ""; }
+
+.ui-helper-zfix {
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%; }
+
+.ui-front {
+  z-index: 1040; }
+
 /* ------------------------------------------------------------------------------
  *
  *  # Prism

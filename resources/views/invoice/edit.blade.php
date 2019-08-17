@@ -81,16 +81,16 @@
                         <input type="text" class="form-control" readonly value="{{$invoice_detail[0]->stock_detail->product->desc}}">
                     </td>
                     <td>
-                        <input name="qty" id="qty" readonly value="{{$invoice_detail[0]->qty}}" type="number" min="1" step="any" class="form-control" placeholder="ចំនួន">
+                        <input name="qty" id="qty" readonly value="{{$invoice_detail[0]->qty}}" type="number" min="0" step="any" class="form-control" placeholder="ចំនួន">
                     </td>
                     <td>
-                        <input readonly id="purchase" value="{{$invoice_detail[0]->stock_detail->pur_price}}" type="number" min="1" step="any" class="form-control" placeholder="តម្លៃទិញ">
+                        <input readonly id="purchase" value="{{$invoice_detail[0]->stock_detail->pur_price}}" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">
                     </td>
                     <td>
-                        <input id="sell" value="{{$invoice_detail[0]->amount/$invoice_detail[0]->qty}}" type="number" min="1" step="any" class="form-control" placeholder="តម្លៃលក់">
+                        <input id="sell" value="{{$invoice_detail[0]->amount/$invoice_detail[0]->qty}}" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃលក់">
                     </td>
                     <td>
-                        <input name="amount" readonly id="amount" value="{{$invoice_detail[0]->amount}}" type="number" min="1" step="any" class="form-control" placeholder="សរុប">
+                        <input name="amount" readonly id="amount" value="{{$invoice_detail[0]->amount}}" type="number" min="0" step="any" class="form-control" placeholder="សរុប">
                     </td>
                     <td>
                     </td>

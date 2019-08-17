@@ -6,7 +6,7 @@
     <div class="page-header page-header-light">
         <div class="page-header-content header-elements-md-inline">
             <div class="page-title d-flex">
-                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">របាយការណ៍</span> - របាយការណ៍ទិញ
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">របាយការណ៍</span> - ចំណូលចំណាយ
                 </h4>
                 <a href="#" class="ml-auto align-self-center text-default d-md-none" data-toggle="collapse"
                    data-target="#navbar-mobile-top-header"><i class="icon-more"></i></a>
@@ -22,8 +22,11 @@
                                                 class="navbar-nav-link {{request()->is('report-sell')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> លក់</a></li>
                         <li class="nav-item"><a href="{{route('inc.exp.index')}}"
-                                                class="navbar-nav-link {{request()->is('budget')? 'active':''}}"><i
+                                                class="navbar-nav-link {{request()->is('report-income-expense-index')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ថ្លៃឈ្នួល</a></li>
+                        <li class="nav-item"><a href="{{route('report.budget.index')}}"
+                                                class="navbar-nav-link {{request()->is('report-budget-index')? 'active':''}}"><i
+                                        class="icon-graph mr-2"></i> ចំណូលចំណាយ</a></li>
 
                     </ul>
                 </div>
@@ -35,7 +38,7 @@
                 <div class="breadcrumb">
                     <a href="{{route('buy')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>
                         របាយការណ័</a>
-                    <span class="breadcrumb-item active">របាយការណ៍ទិញ</span>
+                    <span class="breadcrumb-item active">ចំណូលចំណាយ</span>
                 </div>
             </div>
         </div>
@@ -45,7 +48,7 @@
     <!-- Scrollable datatable -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">របាយការណ៍ទិញ</h5>
+            <h5 class="card-title">ចំណូលចំណាយ</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>

@@ -60,6 +60,7 @@ var DatatableBasic = function() {
                 { data: 'pur_amount', name: 'pur_amount' },
                 { data: 'sell_price', name: 'sell_price' },
                 { data: 'sell_amount', name: 'sell_amount' },
+                { data: 'stock_id', name: 'stock_id' },
                 { data: 'created_at', name: 'created_at' },
                 { data: 'action', name: 'action',searchable:false,orderable:false },
             ],
@@ -85,9 +86,10 @@ var DatatableBasic = function() {
                         .append( '<td class="pl-3 bg-info"></td>')
                         .append( '<td class="pl-3 bg-info">'+formatter.format(totalSellAmount)+'</td>' )
                         .append( '<td class="pl-3 bg-info"></td>' )
+                        .append( '<td class="pl-3 bg-info"></td>' )
                         .append( '<td class="pl-3 bg-info"></td>' );
                 },
-                dataSrc: 'created_at'
+                dataSrc: 'stock_id'
             },
             "columnDefs": [
                 { className: "pl-3", "targets": [ 0,1,2,3,4,5,6,7 ] },

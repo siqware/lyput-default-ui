@@ -77,9 +77,9 @@
                                         </div>
                                         <div class="col-md-2">
                                             @if(request()->is('budget'))
-                                                <input type="number" required min="1" step="any" name="amount" placeholder="តម្លៃ" class="form-control">
+                                                <input type="number" required min="0" step="any" name="amount" placeholder="តម្លៃ" class="form-control">
                                             @else
-                                                <input type="number" value="{{$budget->amount}}" required min="1" step="any" name="amount" placeholder="តម្លៃ" class="form-control">
+                                                <input type="number" value="{{$budget->amount}}" required min="0" step="any" name="amount" placeholder="តម្លៃ" class="form-control">
                                             @endif
                                         </div>
                                         <div class="col-md-3">

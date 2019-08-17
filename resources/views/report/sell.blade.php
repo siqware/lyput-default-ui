@@ -19,11 +19,14 @@
                                                 class="navbar-nav-link {{request()->is('report-buy')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ទិញ</a></li>
                         <li class="nav-item"><a href="{{route('sell')}}"
-                                                class="navbar-nav-link {{request()->is('report-sell' || '/')? 'active':''}}"><i
+                                                class="navbar-nav-link {{request()->is('report-sell')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> លក់</a></li>
                         <li class="nav-item"><a href="{{route('inc.exp.index')}}"
                                                 class="navbar-nav-link {{request()->is('report-income-expense-index')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ថ្លៃឈ្នួល</a></li>
+                        <li class="nav-item"><a href="{{route('report.budget.index')}}"
+                                                class="navbar-nav-link {{request()->is('report-budget-index')? 'active':''}}"><i
+                                        class="icon-graph mr-2"></i> ចំណូលចំណាយ</a></li>
 
                     </ul>
                 </div>

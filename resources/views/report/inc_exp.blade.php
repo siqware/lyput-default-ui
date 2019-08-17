@@ -24,6 +24,9 @@
                         <li class="nav-item"><a href="{{route('inc.exp.index')}}"
                                                 class="navbar-nav-link {{request()->is('report-income-expense-index')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ថ្លៃឈ្នួល</a></li>
+                        <li class="nav-item"><a href="{{route('report.budget.index')}}"
+                                                class="navbar-nav-link {{request()->is('report-budget-index')? 'active':''}}"><i
+                                        class="icon-graph mr-2"></i> ចំណូលចំណាយ</a></li>
 
                     </ul>
                 </div>

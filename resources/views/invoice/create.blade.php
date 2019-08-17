@@ -78,18 +78,19 @@
                     <td class="text-center">0</td>
                     <td>
                         <select data-placeholder="កត់ទំនិញចូល" name="product[0][id]" class="form-control form-control-select2" data-fouc></select>
+                        <input type="hidden" id="is-select">
                     </td>
                     <td>
-                        <input name="product[0][qty]" id="qty" value="1" type="number" min="1" step="any" class="form-control" placeholder="ចំនួន">
+                        <input name="product[0][qty]" id="qty" value="1" type="number" min="0" step="any" class="form-control" placeholder="ចំនួន">
                     </td>
                     <td>
-                        <input name="product[0][pur_price]" readonly id="purchase" value="1" type="number" min="1" step="any" class="form-control" placeholder="តម្លៃទិញ">
+                        <input name="product[0][pur_price]" readonly id="purchase" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">
                     </td>
                     <td>
-                        <input name="product[0][sell_price]" id="sell" value="1" type="number" min="1" step="any" class="form-control" placeholder="តម្លៃលក់">
+                        <input name="product[0][sell_price]" id="sell" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃលក់">
                     </td>
                     <td>
-                        <input name="product[0][amount]" readonly id="amount" value="1" type="number" min="1" step="any" class="form-control" placeholder="សរុប">
+                        <input name="product[0][amount]" readonly id="amount" value="1" type="number" min="0" step="any" class="form-control" placeholder="សរុប">
                     </td>
                     <td>
                     </td>
@@ -105,7 +106,7 @@
                         ថ្លៃឈ្នួល
                     </td>
                     <td>
-                        <input name="income_note" id="amount" value="0" type="number" min="1" step="any" class="form-control" placeholder="សរុប">
+                        <input name="income_note" id="amount" value="0" type="number" min="0" step="any" class="form-control" placeholder="សរុប">
                     </td>
                     <td>
                         <button type="button" id="btn-add-more" class="btn btn-info"><i class="icon-add"></i> បន្ថែម</button>
@@ -120,14 +121,14 @@
                         សរុប
                     </td>
                     <td>
-                        <input name="total" id="total" readonly type="number" min="1" step="any" class="form-control" placeholder="សរុប">
+                        <input name="total" id="total" readonly type="number" min="0" step="any" class="form-control" placeholder="សរុប">
                     </td>
                     <td>
                     </td>
                 </tr>
                 </tfoot>
             </table>
-            <button type="submit" disabled id="btn-submit" class="btn btn-success m-2"><i class="icon-add-to-list"></i> បន្ថែទំនិញ</button>
+            <button type="submit" disabled id="btn-submit" class="btn btn-success m-2"><i class="icon-floppy-disk mr-2"></i> រក្សារទុក</button>
         </form>
     </div>
     <!-- /New Bulk Product -->

@@ -24,7 +24,13 @@ Route::get('/user-json-list', 'UserController@user_json_list')->name('user.json.
 /*Product*/
 Route::resource('/product','ProductController');
 Route::get('/product-stock-detail-list','ProductController@product_stock_detail')->name('product.stock.list');
+//import stock
+Route::get('/product-stock-import-index','ProductController@import_stock_index')->name('stock.import.index');
+Route::post('/product-stock-import','ProductController@import_stock')->name('stock.import');
+// end import stock
 Route::post('/search-product-stock','ProductController@search_stock')->name('product.search.stock');
+Route::post('/search-product-out-stock','ProductController@search_out_stock')->name('product.search.out.stock');
+Route::post('/search-product-autocomplete','ProductController@product_autocomplete')->name('product.search.autocomplete');
 Route::get('/product-check','ProductController@check')->name('product.check');
 Route::get('/product-check-list','ProductController@check_list')->name('product.check.list');
 /*Invoice Detail*/

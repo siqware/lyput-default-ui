@@ -18,9 +18,15 @@
                         <li class="nav-item"><a href="{{route('product.index')}}"
                                                 class="navbar-nav-link {{request()->is('product')? 'active':''}}"><i
                                         class="icon-list-numbered mr-2"></i> បញ្ជី</a></li>
+                        <li class="nav-item"><a href="{{route('product.check')}}"
+                                                class="navbar-nav-link {{request()->is('product-check')? 'active':''}}"><i
+                                        class="icon-checkbox-checked mr-2"></i> ពិនិត្យទំនិញ</a></li>
                         <li class="nav-item"><a href="{{route('product.create')}}"
                                                 class="navbar-nav-link {{request()->is('product/create')? 'active':''}}"><i
                                         class="icon-add mr-2"></i> បន្ថែមទំនិញ</a></li>
+                        <li class="nav-item"><a href="{{route('stock.import.index')}}"
+                                                class="navbar-nav-link {{request()->is('product-stock-import-index')? 'active':''}}"><i
+                                        class="icon-add mr-2"></i> បន្ថែមស្តុក</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,6 +64,7 @@
                 <th>តម្លៃទិញសរុប</th>
                 <th>តម្លៃលក់</th>
                 <th>តម្លៃលក់សរុប</th>
+                <th></th>
                 <th>ថ្ងៃខែឆ្នាំ</th>
                 <th></th>
             </tr>

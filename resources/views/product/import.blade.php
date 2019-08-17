@@ -6,7 +6,7 @@
     <div class="page-header page-header-light">
         <div class="page-header-content header-elements-md-inline">
             <div class="page-title d-flex">
-                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">ទំនិញ</span> - កែប្រែទំនិញ
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">ទំនិញ</span> - បញ្ចូលដែលដាច់ក្នុងស្តុក
                 </h4>
                 <a href="#" class="ml-auto align-self-center text-default d-md-none" data-toggle="collapse"
                    data-target="#navbar-mobile-top-header"><i class="icon-more"></i></a>
@@ -37,7 +37,7 @@
                 <div class="breadcrumb">
                     <a href="{{route('product.index')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>
                         ទំនិញ</a>
-                    <span class="breadcrumb-item active">កែប្រែទំនិញ</span>
+                    <span class="breadcrumb-item active">បញ្ចូលដែលដាច់ក្នុងស្តុក</span>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
     <!-- New Bulk Product -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">កែប្រែទំនិញ</h5>
+            <h5 class="card-title">បញ្ចូលដែលដាច់ក្នុងស្តុក</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>
@@ -65,55 +65,74 @@
                 </div>
             @endif
         </div>
-        <form id="form-edit" method="post" action="{{route('product.update',$product[0]->id)}}" class="table-responsive">
+        <form method="post" action="{{route('stock.import')}}" class="table-responsive">
             @csrf
-            <input type="hidden" name="_method" value="put">
-            <input type="hidden" name="pro_id" value="{{$product[0]->product->id}}">
             <table class="table table-bordered table-sm table-striped">
                 <thead>
                 <tr>
+                    <th>#</th>
                     <th>ពិពណ៌នា</th>
                     <th>ចំនួន</th>
                     <th>តម្លៃទិញ</th>
                     <th>តម្លៃលក់</th>
                     <th>សរុប</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody id="pro-input-list">
                 <tr>
+                    <td class="text-center">0</td>
                     <td>
-                        <input name="desc" type="text" value="{{$product[0]->product->desc}}" class="form-control" placeholder="ពិពណ៌នា">
+                        <select data-placeholder="កត់ទំនិញចូល" name="product[0][stock_id]" class="form-control form-control-select2" data-fouc></select>
+                        <input type="hidden" data-placeholder="កត់ទំនិញចូល" id="pro-id" name="product[0][id]" class="form-control">
                     </td>
                     <td>
-                        <input name="qty" id="qty" value="{{$product[0]->qty}}" type="number" min="0" step="any" class="form-control" placeholder="ចំនួន">
+                        <input name="product[0][qty]" id="qty" value="1" type="number" min="0" step="any" class="form-control" placeholder="ចំនួន">
                     </td>
                     <td>
-                        <input name="pur_price" id="purchase" value="{{$product[0]->pur_price}}" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">
+                        <input name="product[0][pur_price]" id="purchase" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">
                     </td>
                     <td>
-                        <input name="sell_price" value="{{$product[0]->sell_price}}" id="sell" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃលក់">
+                        <input name="product[0][sell_price]" id="sell" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃលក់">
                     </td>
                     <td>
-                        <input name="amount" readonly id="amount" type="number" min="0" step="any" class="form-control" placeholder="សរុប">
+                        <input name="product[0][amount]" readonly id="amount" value="1" type="number" min="0" step="any" class="form-control" placeholder="សរុប">
+                    </td>
+                    <td>
                     </td>
                 </tr>
                 </tbody>
+                <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right">
+                        សរុប
+                    </td>
+                    <td>
+                        <input name="total" id="total" readonly type="number" min="0" step="any" class="form-control" placeholder="សរុប">
+                    </td>
+                    <td>
+                        <button type="button" id="btn-add-more" class="btn btn-info"><i class="icon-add"></i> បន្ថែម</button>
+                    </td>
+                </tr>
+                </tfoot>
             </table>
-        </form>
-        <form id="form-delete" class="row" method="post" action="{{route('product.destroy',$product[0]->id)}}">
-            @csrf
-            <input type="hidden" name="_method" value="delete">
-            <div class="col-md-12">
-                <button type="button" onclick="document.getElementById('form-edit').submit();" disabled id="btn-submit" class="btn btn-success m-2"><i class="icon-sync"></i> រក្សាទុក</button>
-                <button id="sweet_combine" type="button" class="btn btn-warning"><i class="icon-database-remove ml-2"> លុប</i></button>
-                <a href="{{route('product.index')}}" id="btn-submit" class="btn btn-info m-2"><i class="icon-backward"></i> ថយក្រោយ</a>
-            </div>
+            <button type="submit" disabled id="btn-submit" class="btn btn-success m-2"><i class="icon-add-to-list mr-2"></i> បន្ថែមស្តុក</button>
         </form>
     </div>
     <!-- /New Bulk Product -->
 @stop
 @section('page-script')
+    @routes
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         console.log('app started')
     </script>
 @stop
@@ -126,8 +145,6 @@
 @stop
 @push('page-js')
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
-    <script src="{{asset('dashboard-ui/global_assets/js/plugins/notifications/sweet_alert.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/styling/uniform.min.js')}}"></script>
-    <script src="{{asset('js/pages/product/create.js')}}"></script>
-    <script src="{{asset('js/pages/product/edit.js')}}"></script>
+    <script src="{{asset('js/pages/product/import.js')}}"></script>
 @endpush

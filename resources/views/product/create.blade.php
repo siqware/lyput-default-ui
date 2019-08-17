@@ -18,9 +18,15 @@
                         <li class="nav-item"><a href="{{route('product.index')}}"
                                                 class="navbar-nav-link {{request()->is('product')? 'active':''}}"><i
                                         class="icon-list-numbered mr-2"></i> បញ្ជី</a></li>
+                        <li class="nav-item"><a href="{{route('product.check')}}"
+                                                class="navbar-nav-link {{request()->is('product-check')? 'active':''}}"><i
+                                        class="icon-checkbox-checked mr-2"></i> ពិនិត្យទំនិញ</a></li>
                         <li class="nav-item"><a href="{{route('product.create')}}"
                                                 class="navbar-nav-link {{request()->is('product/create')? 'active':''}}"><i
                                         class="icon-add mr-2"></i> បន្ថែមទំនិញ</a></li>
+                        <li class="nav-item"><a href="{{route('stock.import.index')}}"
+                                                class="navbar-nav-link {{request()->is('product-stock-import-index')? 'active':''}}"><i
+                                        class="icon-add mr-2"></i> បន្ថែមស្តុក</a></li>
                     </ul>
                 </div>
             </div>
@@ -77,19 +83,19 @@
                 <tr>
                     <td class="text-center">0</td>
                     <td>
-                        <input name="product[0][desc]" type="text" class="form-control" placeholder="ពិពណ៌នា">
+                        <input type="text" placeholder="ពិពណ៌នា" name="product[0][desc]" class="form-control ac-basic">
                     </td>
                     <td>
-                        <input name="product[0][qty]" id="qty" value="1" type="number" min="1" step="any" class="form-control" placeholder="ចំនួន">
+                        <input name="product[0][qty]" id="qty" value="1" type="number" min="0" step="any" class="form-control" placeholder="ចំនួន">
                     </td>
                     <td>
-                        <input name="product[0][pur_price]" id="purchase" value="1" type="number" min="1" step="any" class="form-control" placeholder="តម្លៃទិញ">
+                        <input name="product[0][pur_price]" id="purchase" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">
                     </td>
                     <td>
-                        <input name="product[0][sell_price]" id="#sell" type="number" min="1" step="any" class="form-control" placeholder="តម្លៃលក់">
+                        <input name="product[0][sell_price]" id="sell" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃលក់">
                     </td>
                     <td>
-                        <input name="product[0][amount]" readonly id="amount" type="number" min="1" step="any" class="form-control" placeholder="សរុប">
+                        <input name="product[0][amount]" readonly id="amount" type="number" min="0" step="any" class="form-control" placeholder="សរុប">
                     </td>
                     <td>
                     </td>
@@ -105,7 +111,7 @@
                         សរុប
                     </td>
                     <td>
-                        <input name="total" id="total" readonly type="number" min="1" step="any" class="form-control" placeholder="សរុប">
+                        <input name="total" id="total" readonly type="number" min="0" step="any" class="form-control" placeholder="សរុប">
                     </td>
                     <td>
                         <button type="button" id="btn-add-more" class="btn btn-info"><i class="icon-add"></i> បន្ថែម</button>
@@ -113,13 +119,19 @@
                 </tr>
                 </tfoot>
             </table>
-            <button type="submit" disabled id="btn-submit" class="btn btn-success m-2"><i class="icon-add-to-list"></i> បន្ថែទំនិញ</button>
+            <button type="submit" disabled id="btn-submit" class="btn btn-success m-2"><i class="icon-floppy-disk mr-2"></i> រក្សាទុក</button>
         </form>
     </div>
     <!-- /New Bulk Product -->
 @stop
 @section('page-script')
+    @routes
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         console.log('app started')
     </script>
 @stop
@@ -133,5 +145,6 @@
 @push('page-js')
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/styling/uniform.min.js')}}"></script>
+    <script src="{{asset('dashboard-ui/global_assets/js/plugins/extensions/jquery_ui/widgets.min.js')}}"></script>
     <script src="{{asset('js/pages/product/create.js')}}"></script>
 @endpush

@@ -22,6 +22,7 @@ class CreateStockDetailsTable extends Migration
             $table->float('pur_price');
             $table->float('sell_price');
             $table->boolean('status')->default(true);
+            $table->boolean('is_stock')->default(0);
             $table->timestamps();
         });
     }

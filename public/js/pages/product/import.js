@@ -85,14 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var product_tr = '<tr>\n' +
             '                    <td class="text-center">'+_no+'</td>\n' +
             '                    <td>\n' +
-            '                        <select data-placeholder="កត់ទំនិញចូល" name="product['+_no+'][id]" class="form-control form-control-select2" data-fouc></select>\n' +
-            '                        <input type="hidden" id="is-select">\n' +
+            '                        <select data-placeholder="កត់ទំនិញចូល" name="product['+_no+'][stock_id]" class="form-control form-control-select2" data-fouc></select>\n' +
+            '                        <input type="hidden" data-placeholder="កត់ទំនិញចូល" id="pro-id" name="product['+_no+'][id]" class="form-control">\n' +
             '                    </td>\n' +
             '                    <td>\n' +
             '                        <input name="product['+_no+'][qty]" id="qty" value="1" type="number" min="0" step="any" class="form-control" placeholder="ចំនួន">\n' +
             '                    </td>\n' +
             '                    <td>\n' +
-            '                        <input name="product['+_no+'][pur_price]" readonly id="purchase" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">\n' +
+            '                        <input name="product['+_no+'][pur_price]" id="purchase" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">\n' +
             '                    </td>\n' +
             '                    <td>\n' +
             '                        <input name="product['+_no+'][sell_price]" id="sell" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃលក់">\n' +
@@ -149,9 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $.each(selectedId,function (key,val) {
             listedId.push(parseInt($(val).val()))
         });
-        $(select2DOM).select2({
+        var select2 = $(select2DOM).select2({
             ajax:{
-                url:route('product.search.stock').template,
+                url:route('product.search.out.stock').template,
                 method:'post',
                 dataType:'json',
                 delay:250,
@@ -161,13 +161,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         _data:listedId
                     };
                 },
-            }
+            },
+            escapeMarkup: function(markup) {
+                return markup;
+            },
+            templateResult: function(data) {
+                if (data.loading){
+                    return;
+                }
+                return '<span class="select-data" data-id="'+data.data_id+'">'+data.text+'</span>';
+            },
+            templateSelection: function(data) {
+                return data.text;
+            },
+            cache:false
         });
         $(select2DOM).on("select2:select", function (e) {
+            var dataId = $(this).select2('data')[0].pro_id;
             var id = $(this).val();
-            var is_select_id = $(this).select2('data')[0].id;
-            var is_select_el = $(e.delegateTarget.parentNode).find('#is-select');
-            var qty_el = $(e.delegateTarget.parentNode.parentNode).find('#qty');
+            var pro_id_el = $(e.delegateTarget.parentNode).find('#pro-id');
             var qty_el = $(e.delegateTarget.parentNode.parentNode).find('#qty');
             var pur_el = $(e.delegateTarget.parentNode.parentNode).find('#purchase');
             var sell_el = $(e.delegateTarget.parentNode.parentNode).find('#sell');
@@ -179,12 +191,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 dataType: 'json',
                 data:{_token:$('meta[name="csrf-token"]').attr('content')},
                 success:function (data) {
-                    /*is select*/
-                    is_select_el.prop('value',is_select_id);
+                    /*option id*/
+                    pro_id_el.prop('value',dataId);
                     /*qty*/
                     qty_el.val(1);
                     qty_el.prop('min',1);
-                    qty_el.prop('max',data.remain_qty);
                     /*purchase*/
                     pur_el.val(data.pur_price);
                     /*sell*/
