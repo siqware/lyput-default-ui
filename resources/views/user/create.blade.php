@@ -108,29 +108,32 @@
                                     <input type="password" class="form-control" placeholder="Type your password" name="password">
                                 </div>
                             </div>
-                            {{--Role--}}
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label">Select your role:</label>
-                                <div class="col-lg-9">
-                                    <select class="form-control form-control-uniform" data-fouc name="role">
-                                        <option value="user">Select role</option>
-                                        <option value="user">User</option>
-                                        <option value="admin">Admin</option>
-                                    </select>
+                            @if(Auth()->user()->role=='super_admin')
+                                {{--Role--}}
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">Select your role:</label>
+                                    <div class="col-lg-9">
+                                        <select class="form-control form-control-uniform" data-fouc name="role">
+                                            <option value="user">Select role</option>
+                                            <option value="user">User</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="super_admin">Super Admin</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            {{--Status--}}
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label">Select your status:</label>
-                                <div class="col-lg-9">
-                                    <select class="form-control form-control-uniform" data-fouc name="status">
-                                        <option value="pending">Select status</option>
-                                        <option value="active">Active</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="inactive">Inactive</option>
-                                    </select>
+                                {{--Status--}}
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">Select your status:</label>
+                                    <div class="col-lg-9">
+                                        <select class="form-control form-control-uniform" data-fouc name="status">
+                                            <option value="pending">Select status</option>
+                                            <option value="active">Active</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="inactive">Inactive</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
 
                         </fieldset>
                     </div>

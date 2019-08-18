@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
 
@@ -112,8 +113,25 @@ class UserController extends Controller
     {
         $input = $request->all();
         $userUpdate = User::findOrFail($id);
+        if ($userUpdate->role=='super_admin'){
+            if (Auth::user()->role=='super_admin'){
+                if ($input['password']==null){
+                    $input['password']=$userUpdate->password;
+                }else{
+                    $input['password'] = Hash::make($input['password']);
+                }
+                $update = $userUpdate->update($input);
+                if ($update){
+                    return redirect(route('user.index'));
+                }
+            }else{
+                return redirect(route('user.index'));
+            }
+        }
         if ($input['password']==null){
             $input['password']=$userUpdate->password;
+        }else{
+            $input['password'] = Hash::make($input['password']);
         }
         $update = $userUpdate->update($input);
         if ($update){
@@ -129,7 +147,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $userDelete = User::findOrFail($id)->delete();
+        $userDelete = User::findOrFail($id);
+        if ($userDelete->role=='super_admin'){
+            return redirect(route('user.index'));
+        }else{
+            $userDelete->delete();
+        }
         if ($userDelete){
             return redirect(route('user.index'));
         }

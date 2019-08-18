@@ -109,6 +109,7 @@
                                     <input type="password" class="form-control" placeholder="Type your password" name="password">
                                 </div>
                             </div>
+                            @if(Auth()->user()->role=='super_admin')
                             {{--Role--}}
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label">Select your role:</label>
@@ -117,6 +118,7 @@
                                         <option value="user">Select role</option>
                                         <option {{$userEdit->role=='user'?'selected':''}} value="user">User</option>
                                         <option {{$userEdit->role=='admin'?'selected':''}} value="admin">Admin</option>
+                                        <option {{$userEdit->role=='super_admin'?'selected':''}} value="super_admin">Super Admin</option>
                                     </select>
                                 </div>
                             </div>
@@ -132,7 +134,7 @@
                                     </select>
                                 </div>
                             </div>
-
+                            @endif
                         </fieldset>
                     </div>
                 </div>

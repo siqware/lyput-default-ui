@@ -11,42 +11,48 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {return view('report.sell');})->name('dashboard');
-Route::get('media', function () {return view('file-manager');})->name('media');
-
 Auth::routes();
-/*User*/
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/user', 'UserController');
-Route::get('/user-json-list', 'UserController@user_json_list')->name('user.json.list');
-/*Product*/
-Route::resource('/product','ProductController');
-Route::get('/product-stock-detail-list','ProductController@product_stock_detail')->name('product.stock.list');
+Route::group(['middleware'=>['auth','web','is.admin']], function () {
+    Route::get('/', function () {
+        return view('report.sell');
+    })->name('dashboard');
+    Route::get('media', function () {
+        return view('file-manager');
+    })->name('media');
+    /*User*/
+    Route::resource('/user', 'UserController');
+    Route::get('/user-json-list', 'UserController@user_json_list')->name('user.json.list');
+    /*Product*/
+    Route::resource('/product', 'ProductController');
+    Route::get('/product-stock-detail-list', 'ProductController@product_stock_detail')->name('product.stock.list');
 //import stock
-Route::get('/product-stock-import-index','ProductController@import_stock_index')->name('stock.import.index');
-Route::post('/product-stock-import','ProductController@import_stock')->name('stock.import');
+    Route::get('/product-stock-import-index', 'ProductController@import_stock_index')->name('stock.import.index');
+    Route::post('/product-stock-import', 'ProductController@import_stock')->name('stock.import');
 // end import stock
-Route::post('/search-product-stock','ProductController@search_stock')->name('product.search.stock');
-Route::post('/search-product-out-stock','ProductController@search_out_stock')->name('product.search.out.stock');
-Route::post('/search-product-autocomplete','ProductController@product_autocomplete')->name('product.search.autocomplete');
-Route::get('/product-check','ProductController@check')->name('product.check');
-Route::get('/product-check-list','ProductController@check_list')->name('product.check.list');
-/*Invoice Detail*/
-Route::resource('/invoice','InvoiceController');
-Route::get('/invoice-index','ProductController@invoicing_index')->name('product.invoice.index');
-Route::get('/stock-detail-data/{id}','InvoiceController@get_stock_id')->name('stock.detail.data');
-Route::get('/invoice-detail-list','InvoiceController@invoice_list')->name('invoice.detail.list');
-/*Expense*/
-Route::resource('budget','BudgetController');
-Route::get('/budget-list','BudgetController@budget_list')->name('budget.list');
-/*Report*/
-Route::get('/report-buy-list','ReportController@buy_list')->name('buy.list');
-Route::get('/report-buy','ReportController@buy')->name('buy');
-Route::get('/report-sell','ReportController@sell')->name('sell');
-Route::get('/report-sell-list','ReportController@sell_list')->name('sell.list');
-Route::get('/report-income-expense','ReportController@exp_inc')->name('inc.exp');
-Route::get('/report-income-expense-index','ReportController@exp_inc_index')->name('inc.exp.index');
-Route::get('/report-budget-index','ReportController@budget_index')->name('report.budget.index');
-Route::get('/report-budget','ReportController@budget_list')->name('report.budget.list');
+    Route::post('/search-product-stock', 'ProductController@search_stock')->name('product.search.stock');
+    Route::post('/search-product-out-stock', 'ProductController@search_out_stock')->name('product.search.out.stock');
+    Route::post('/search-product-autocomplete', 'ProductController@product_autocomplete')->name('product.search.autocomplete');
+    Route::get('/product-check', 'ProductController@check')->name('product.check');
+    Route::get('/product-check-list', 'ProductController@check_list')->name('product.check.list');
+    /*Invoice Detail*/
+    Route::resource('/invoice', 'InvoiceController');
+    Route::get('/invoice-index', 'ProductController@invoicing_index')->name('product.invoice.index');
+    Route::get('/stock-detail-data/{id}', 'InvoiceController@get_stock_id')->name('stock.detail.data');
+    Route::get('/invoice-detail-list', 'InvoiceController@invoice_list')->name('invoice.detail.list');
+    /*Expense*/
+    Route::resource('budget', 'BudgetController');
+    Route::get('/budget-list', 'BudgetController@budget_list')->name('budget.list');
+    /*Report*/
+    Route::get('/report-buy-list', 'ReportController@buy_list')->name('buy.list');
+    Route::get('/report-buy', 'ReportController@buy')->name('buy');
+    Route::get('/report-sell', 'ReportController@sell')->name('sell');
+    Route::get('/report-sell-list', 'ReportController@sell_list')->name('sell.list');
+    Route::get('/report-income-expense', 'ReportController@exp_inc')->name('inc.exp');
+    Route::get('/report-income-expense-index', 'ReportController@exp_inc_index')->name('inc.exp.index');
+    Route::get('/report-budget-index', 'ReportController@budget_index')->name('report.budget.index');
+    Route::get('/report-budget', 'ReportController@budget_list')->name('report.budget.list');
+});
