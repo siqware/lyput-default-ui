@@ -77,6 +77,7 @@ var end = moment().add(1,'days').format('Y-M-D');
                 end = moment($('#end').val()).format('Y-M-D');
             }
             init_table();
+            sell_un_list();
             console.log(start+'-'+end);
         });
         /*end date range*/
@@ -85,7 +86,6 @@ var end = moment().add(1,'days').format('Y-M-D');
         function init_table(){
             table = $('.datatable-scroll-y').DataTable({
                 destroy:true,
-                paging:false,
                 autoWidth: true,
                 processing: true,
                 serverSide: true,
@@ -121,26 +121,26 @@ var end = moment().add(1,'days').format('Y-M-D');
                     },
                     dataSrc: 'created_at'
                 },
-                drawCallback:function (settings) {
-                    console.log(settings.json.data);
-                    var totalAmount = 0;
-                    var totalQty = 0;
-                    var totalPurchase = 0;
-                    $.each(settings.json.data,function (key,val) {
-                        totalPurchase += parseInt(val.qty)*parseFloat(val.stock_detail.pur_price);
-                        totalAmount+=parseFloat(val.amount.replace('$',''));
-                        totalQty+=parseInt(val.qty);
-                    });
-                    $('.totalAmount').html(formatter.format(totalAmount));
-                    $('.totalCount').html(totalQty);
-                    $('.totalIncomeAmount').html(formatter.format(totalAmount-totalPurchase));
-                },
                 "columnDefs": [
                     { className: "pl-3", "targets": [ 0,1,2,3,4 ] },
                 ]
             });
         }
         init_table();
+        function sell_un_list(){
+            $.ajax({
+                url:route('sell.un.list').template,
+                method:'post',
+                dataType:'json',
+                data: {'_token':$('meta[name="csrf-token"]').attr('content'),'start':start,'end':end},
+                success:function (data) {
+                    $('.totalAmount').html(formatter.format(data.total_sell_amount));
+                    $('.totalCount').html(data.total_qty);
+                    $('.totalIncomeAmount').html(formatter.format(data.benifit_amount));
+                }
+            })
+        }
+        sell_un_list();
         // Resize scrollable table when sidebar width changes
         $('.sidebar-control').on('click', function() {
             table.columns.adjust().draw();

@@ -77,6 +77,7 @@ var end = moment().add(1,'days').format('Y-M-D');
                 end = moment($('#end').val()).format('Y-M-D');
             }
             init_table();
+            buy_un_list();
             console.log(start+'-'+end);
         });
         /*end date range*/
@@ -85,11 +86,9 @@ var end = moment().add(1,'days').format('Y-M-D');
         function init_table(){
             table = $('.datatable-scroll-y').DataTable({
                 destroy:true,
-                paging:false,
                 autoWidth: true,
                 processing: true,
                 serverSide: true,
-                pageLength:100,
                 ajax: {
                     url: route('buy.list').template,
                     method:'get',
@@ -138,16 +137,6 @@ var end = moment().add(1,'days').format('Y-M-D');
                     },
                     dataSrc: 'stock_id'
                 },
-                drawCallback:function (settings) {
-                    var totalAmount = 0;
-                    var totalQty = 0;
-                    $.each(settings.json.data,function (key,val) {
-                        totalAmount+=parseFloat(val.pur_amount.replace('$',''));
-                        totalQty+=parseInt(val.qty);
-                    });
-                    $('.totalAmount').html(formatter.format(totalAmount));
-                    $('.totalCount').html(totalQty);
-                },
                 "columnDefs": [
                     { className: "pl-3", "targets": [ 0,1,2,3,4,5,6,7 ] },
                     { className: "text-center", "targets": [ 8 ] },
@@ -155,6 +144,19 @@ var end = moment().add(1,'days').format('Y-M-D');
             });
         }
         init_table();
+        function buy_un_list(){
+            $.ajax({
+                url:route('buy.un.list').template,
+                method:'post',
+                dataType:'json',
+                data: {'_token':$('meta[name="csrf-token"]').attr('content'),'start':start,'end':end},
+                success:function (data) {
+                    $('.totalAmount').html(formatter.format(data.total_purchase));
+                    $('.totalCount').html(data.total_qty);
+                }
+            })
+        }
+        buy_un_list();
         // Resize scrollable table when sidebar width changes
         $('.sidebar-control').on('click', function() {
             table.columns.adjust().draw();

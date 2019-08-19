@@ -51,9 +51,11 @@ Route::group(['middleware'=>['is.admin']], function () {
     Route::post('/budget-autocomplete', 'BudgetController@budget_autocomplete')->name('budget.autocomplete');
     /*Report*/
     Route::get('/report-buy-list', 'ReportController@buy_list')->name('buy.list');
+    Route::post('/report-buy-un-list', 'ReportController@buy_un_list')->name('buy.un.list');
     Route::get('/report-buy', 'ReportController@buy')->name('buy');
     Route::get('/report-sell', 'ReportController@sell')->name('sell');
     Route::get('/report-sell-list', 'ReportController@sell_list')->name('sell.list');
+    Route::post('/report-sell-un-list', 'ReportController@sell_un_list')->name('sell.un.list');
     Route::get('/report-income-expense', 'ReportController@exp_inc')->name('inc.exp');
     Route::get('/report-income-expense-index', 'ReportController@exp_inc_index')->name('inc.exp.index');
     Route::get('/report-budget-index', 'ReportController@budget_index')->name('report.budget.index');
