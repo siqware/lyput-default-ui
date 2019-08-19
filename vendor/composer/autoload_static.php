@@ -444,6 +444,7 @@ class ComposerStaticInite78f11eb02e443408866ab92dcc3bc04
         'App\\Http\\Controllers\\BudgetController' => __DIR__ . '/../..' . '/app/Http/Controllers/BudgetController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\ImportStockController' => __DIR__ . '/../..' . '/app/Http/Controllers/ImportStockController.php',
         'App\\Http\\Controllers\\IncomeNoteController' => __DIR__ . '/../..' . '/app/Http/Controllers/IncomeNoteController.php',
         'App\\Http\\Controllers\\InvoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvoiceController.php',
         'App\\Http\\Controllers\\InvoiceDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvoiceDetailController.php',

@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\BudgetController' => $baseDir . '/app/Http/Controllers/BudgetController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\ImportStockController' => $baseDir . '/app/Http/Controllers/ImportStockController.php',
     'App\\Http\\Controllers\\IncomeNoteController' => $baseDir . '/app/Http/Controllers/IncomeNoteController.php',
     'App\\Http\\Controllers\\InvoiceController' => $baseDir . '/app/Http/Controllers/InvoiceController.php',
     'App\\Http\\Controllers\\InvoiceDetailController' => $baseDir . '/app/Http/Controllers/InvoiceDetailController.php',
