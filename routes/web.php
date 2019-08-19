@@ -29,6 +29,8 @@ Route::group(['middleware'=>['is.admin']], function () {
     /*Product*/
     Route::resource('/product', 'ProductController');
     Route::get('/product-stock-detail-list', 'ProductController@product_stock_detail')->name('product.stock.list');
+    Route::get('/stock-excel-import-index', 'ImportStockController@excel_import_index')->name('stock.excel.import.index');
+    Route::post('/stock-excel-import', 'ImportStockController@excel_import')->name('stock.excel.import');
 //import stock
     Route::get('/product-stock-import-index', 'ProductController@import_stock_index')->name('stock.import.index');
     Route::post('/product-stock-import', 'ProductController@import_stock')->name('stock.import');
