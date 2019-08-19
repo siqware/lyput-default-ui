@@ -59,41 +59,57 @@
                             </legend>
                             <div class="form-group row">
                                 <div class="col-lg-12">
-                                    <div class="row">
-                                        @if(request()->is('budget'))
-                                        <div class="col-md-3">
-                                            <select name="type" class="form-control">
-                                                <option value="inc">ចំណូល</option>
-                                                <option value="exp">ចំណាយ</option>
-                                            </select>
-                                        </div>
-                                        @endif
-                                        <div class="col-md-4">
-                                            @if(request()->is('budget'))
-                                                <input type="text" required name="desc" placeholder="ពិពណ៌នា" class="form-control">
-                                            @else
-                                                <input type="text" required name="desc" value="{{$budget->desc}}" placeholder="ពិពណ៌នា" class="form-control">
-                                            @endif
-                                        </div>
-                                        <div class="col-md-2">
-                                            @if(request()->is('budget'))
-                                                <input type="number" required min="0" step="any" name="amount" placeholder="តម្លៃ" class="form-control">
-                                            @else
-                                                <input type="number" value="{{$budget->amount}}" required min="0" step="any" name="amount" placeholder="តម្លៃ" class="form-control">
-                                            @endif
-                                        </div>
-                                        <div class="col-md-3">
-                                            @if(request()->is('budget'))
-                                                <button type="submit" class="btn btn-primary">បន្ថែម <i
-                                                            class="icon-floppy-disk ml-2"></i>
-                                                </button>
-                                            @else
-                                                <button type="submit" class="btn btn-success">កែប្រែ <i
-                                                            class="icon-sync ml-2"></i>
-                                                </button>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    <table class="table table-striped table-sm">
+                                        <thead>
+                                        <tr>
+                                            <th>ប្រភេទ</th>
+                                            <th>ពិពណ៌នា</th>
+                                            <th>តម្លៃ</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="budget-input-list">
+                                        <tr>
+                                            <td>
+                                                <select name="budget[0][type]" class="form-control">
+                                                    <option value="inc">ចំណូល</option>
+                                                    <option value="exp">ចំណាយ</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                @if(request()->is('budget'))
+                                                    <input type="text" required name="budget[0][desc]" placeholder="ពិពណ៌នា" class="form-control ac-basic">
+                                                @else
+                                                    <input type="text" required name="budget[0][desc]" value="{{$budget->desc}}" placeholder="ពិពណ៌នា" class="form-control ac-basic">
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if(request()->is('budget'))
+                                                    <input type="number" required min="0" step="any" name="budget[0][amount]" placeholder="តម្លៃ" class="form-control">
+                                                @else
+                                                    <input type="number" value="{{$budget->amount}}" required min="0" step="any" name="budget[0][amount]" placeholder="តម្លៃ" class="form-control">
+                                                @endif
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td colspan="2" class="text-right">
+                                                <button type="button" class="btn btn-info btn-add-more"><i class="icon-add mr-2"></i> បន្ថែម</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="pl-0">
+                                                <button type="submit" class="btn btn-success"><i class="icon-floppy-disk mr-2"></i> រក្សារទុក</button>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
                                 </div>
                             </div>
                         </fieldset>
@@ -123,6 +139,11 @@
 @section('page-script')
     @routes
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         console.log('app started')
     </script>
 @stop
@@ -136,7 +157,6 @@
 @push('page-js')
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
-    <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/styling/uniform.min.js')}}"></script>
-    <script src="{{asset('dashboard-ui/global_assets/js/plugins/tables/datatables/extensions/dataTables.rowGroup.min.js')}}"></script>
+    <script src="{{asset('dashboard-ui/global_assets/js/plugins/extensions/jquery_ui/widgets.min.js')}}"></script>
     <script src="{{asset('js/pages/budget/index.js')}}"></script>
 @endpush

@@ -27,6 +27,10 @@
                         <li class="nav-item"><a href="{{route('report.budget.index')}}"
                                                 class="navbar-nav-link {{request()->is('report-budget-index')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ចំណូលចំណាយ</a></li>
+                        <li class="nav-item"><a href="{{route('report.close.index')}}"
+                                                class="navbar-nav-link {{request()->is('report-close-report-index')? 'active':''}}"><i
+                                        class="icon-graph mr-2"></i> បិទបញ្ជី</a></li>
+
 
                     </ul>
                 </div>
@@ -48,7 +52,7 @@
     <!-- Scrollable datatable -->
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">បញ្ជីទំនិញ</h5>
+            <h5 class="card-title">របាយការណ៍លក់</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>

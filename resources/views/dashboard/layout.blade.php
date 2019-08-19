@@ -32,7 +32,7 @@
 
 </head>
 
-<body>
+<body class="navbar-top">
 
 <!-- Main navbar -->
 @include('dashboard.navbar')

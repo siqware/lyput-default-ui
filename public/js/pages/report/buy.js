@@ -42,8 +42,8 @@ var DatatableBasic = function() {
             currency: 'USD',
         });
         /*date ramge*/
-        var start = moment().subtract(29, 'days').format('Y-M-D');
-        var end = moment().format('Y-M-D');
+        var start = moment().format('Y-M-D');
+var end = moment().add(1,'days').format('Y-M-D');
         var range = {
             'Today': [moment(), moment().add(1,'days')],
             'Yesterday': [moment().subtract(1, 'days'), moment()],
@@ -85,9 +85,8 @@ var DatatableBasic = function() {
         function init_table(){
             table = $('.datatable-scroll-y').DataTable({
                 destroy:true,
+                paging:false,
                 autoWidth: true,
-                scrollX: true,
-                scrollY: 400,
                 processing: true,
                 serverSide: true,
                 pageLength:100,

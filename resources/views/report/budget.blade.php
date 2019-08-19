@@ -27,6 +27,10 @@
                         <li class="nav-item"><a href="{{route('report.budget.index')}}"
                                                 class="navbar-nav-link {{request()->is('report-budget-index')? 'active':''}}"><i
                                         class="icon-graph mr-2"></i> ចំណូលចំណាយ</a></li>
+                        <li class="nav-item"><a href="{{route('report.close.index')}}"
+                                                class="navbar-nav-link {{request()->is('report-close-report-index')? 'active':''}}"><i
+                                        class="icon-graph mr-2"></i> បិទបញ្ជី</a></li>
+
 
                     </ul>
                 </div>

@@ -3,12 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Budget;
+use App\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
 class BudgetController extends Controller
 {
+    /*budget auto complete*/
+    public function budget_autocomplete(Request $request)
+    {
+//        $inputTerm = $request->_term;
+        $inputTerm = $request->_term;
+        $results = Budget::groupBy('desc')->having('desc','like',"%$inputTerm%")->get();
+        $data = [];
+        foreach ($results as $result) {
+            $data[] = [
+                'id' => $result['id'],
+                'label' => $result['desc'],
+                'value' => $result['desc'],
+            ];
+        }
+        return response()->json($data);
+    }
     /*budget list*/
     public function budget_list(){
         $budget = Budget::all();
@@ -70,15 +87,21 @@ class BudgetController extends Controller
     {
         $input = $request->all();
         $request->validate([
-            'desc'=>'required',
-            'amount'=>'required',
-            'type'=>'required',
+            'budget.*.desc'=>'required',
+            'budget.*.type'=>'required',
+            'budget.*.amount'=>'required',
         ]);
-        $budget = new Budget();
-        $budget->desc = $input['desc'];
-        $budget->type = $input['type'];
-        $budget->amount = $input['amount'];
-        $budget->save();
+        $budget_data = [];
+        foreach ($input['budget'] as $value){
+            $budget_data[] = [
+                'desc'=>$value['desc'],
+                'type'=>$value['type'],
+                'amount'=>$value['amount'],
+                'created_at'=>Carbon::now(),
+                'updated_at'=>Carbon::now()
+            ];
+        }
+        $budget = Budget::insert($budget_data);
         if ($budget){
             return redirect()->back();
         }

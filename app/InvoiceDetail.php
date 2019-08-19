@@ -10,4 +10,7 @@ class InvoiceDetail extends Model
     public function stock_detail(){
         return $this->belongsTo(StockDetail::class)->with('product');
     }
+    public function stock_detail_only(){
+        return $this->belongsTo(StockDetail::class,'stock_detail_id','id');
+    }
 }

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['middleware'=>['auth','web','is.admin']], function () {
+Route::group(['middleware'=>['is.admin']], function () {
     Route::get('/', function () {
         return view('report.sell');
     })->name('dashboard');
@@ -43,9 +43,10 @@ Route::group(['middleware'=>['auth','web','is.admin']], function () {
     Route::get('/invoice-index', 'ProductController@invoicing_index')->name('product.invoice.index');
     Route::get('/stock-detail-data/{id}', 'InvoiceController@get_stock_id')->name('stock.detail.data');
     Route::get('/invoice-detail-list', 'InvoiceController@invoice_list')->name('invoice.detail.list');
-    /*Expense*/
+    /*Budget*/
     Route::resource('budget', 'BudgetController');
     Route::get('/budget-list', 'BudgetController@budget_list')->name('budget.list');
+    Route::post('/budget-autocomplete', 'BudgetController@budget_autocomplete')->name('budget.autocomplete');
     /*Report*/
     Route::get('/report-buy-list', 'ReportController@buy_list')->name('buy.list');
     Route::get('/report-buy', 'ReportController@buy')->name('buy');
@@ -55,4 +56,6 @@ Route::group(['middleware'=>['auth','web','is.admin']], function () {
     Route::get('/report-income-expense-index', 'ReportController@exp_inc_index')->name('inc.exp.index');
     Route::get('/report-budget-index', 'ReportController@budget_index')->name('report.budget.index');
     Route::get('/report-budget', 'ReportController@budget_list')->name('report.budget.list');
+    Route::get('/report-close-report-index', 'ReportController@close_report_index')->name('report.close.index');
+    Route::get('/report-close-report', 'ReportController@close_report')->name('report.close');
 });

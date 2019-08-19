@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-md navbar-dark">
+<div class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="navbar-brand">
         <a href="/" class="d-inline-block">
             <img src="{{asset('dashboard-ui/global_assets/images/logo_light.png')}}" alt="">

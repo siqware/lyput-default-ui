@@ -55,14 +55,24 @@ var end = moment().add(1,'days').format('Y-M-D');
         var table;
         function init_inc_exp(){
             $.ajax({
-                url:route('inc.exp').template,
+                url:route('report.close').template,
                 method:'get',
                 dataType:'json',
                 data: {'_token':$('meta[name="csrf-token"]').attr('content'),'start':start,'end':end},
                 success:function (data) {
-                    $('.exp').html(data.exp);
-                    $('.inc').html(data.inc);
-                    $('.remain').html(data.remain);
+                    var totalPurInSell = 0;
+                    var totalSell = 0;
+                    /*invoice*/
+                    $.each(data.sell,function (key,val) {
+                        totalPurInSell += parseInt(val.qty)*parseFloat(val.stock_detail_only.pur_price);
+                        totalSell += parseFloat(val.amount);
+                    });
+                    var toalIncmeAmount = totalSell-totalPurInSell;
+                    $('.totalIncomeAmount').text(formatter.format(totalSell-totalPurInSell));
+                    /*remain income note - budget expense*/
+                    $('.remainIncNote').text(formatter.format(data.income_note_remain));
+                    $('.outIncome').text(formatter.format(data.budget_income));
+                    $('.totalAmount').text(formatter.format(data.budget_income+data.income_note_remain+toalIncmeAmount));
                 }
             })
         }

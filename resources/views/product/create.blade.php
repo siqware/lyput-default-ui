@@ -86,10 +86,10 @@
                         <input type="text" placeholder="ពិពណ៌នា" name="product[0][desc]" class="form-control ac-basic">
                     </td>
                     <td>
-                        <input name="product[0][qty]" id="qty" value="1" type="number" min="0" step="any" class="form-control" placeholder="ចំនួន">
+                        <input name="product[0][qty]" id="qty" type="number" min="0" step="any" class="form-control" placeholder="ចំនួន">
                     </td>
                     <td>
-                        <input name="product[0][pur_price]" id="purchase" value="1" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">
+                        <input name="product[0][pur_price]" id="purchase" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃទិញ">
                     </td>
                     <td>
                         <input name="product[0][sell_price]" id="sell" type="number" min="0" step="any" class="form-control" placeholder="តម្លៃលក់">

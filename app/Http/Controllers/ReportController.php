@@ -12,6 +12,26 @@ use Yajra\DataTables\DataTables;
 
 class ReportController extends Controller
 {
+    /*close report*/
+    //index
+    public function close_report_index(){
+        return view('report.close_report');
+    }
+    //calc
+    public function close_report(Request $request){
+        $input = $request->all();
+        /*invoice*/
+        $sell = InvoiceDetail::with('stock_detail_only')->whereBetween('created_at',[$input['start'],$input['end']])->get();
+        /*income note-expense*/
+        $income_note = IncomeNote::whereBetween('created_at',[$input['start'],$input['end']])->sum('amount');
+        $budget_expense = Budget::whereBetween('created_at',[$input['start'],$input['end']])->where('type','exp')->sum('amount');
+        /*end income note-expense*/
+        /*budget income*/
+        $budget_income = Budget::whereBetween('created_at',[$input['start'],$input['end']])->where('type','inc')->sum('amount');
+        /*end budget income*/
+        return response()->json(['sell'=>$sell,'income_note_remain'=>$income_note-$budget_expense,'budget_income'=>$budget_income]);
+    }
+    /*end close report*/
     /*budget list*/
     public function budget_list(Request $request){
         $input = $request->all();
