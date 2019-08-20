@@ -60,21 +60,33 @@
             </div>
         </div>
         <div class="card-body">
+            {{--btn toollbar--}}
             <div class="row">
-                <div class="col-lg-5">
-                    <button id="btn-today" class="btn btn-success">ថ្ងៃនេះ</button>
-                    <button id="btn-yesterday" class="btn btn-success">ម្សិលមិញ</button>
-                    <button id="btn-last-7days" class="btn btn-success">ប្រាំពីថ្ងៃមុន</button>
-                    <button id="btn-last-30days" class="btn btn-success">សាមសិបថ្ងៃមុន</button>
-                    <button id="btn-this-month" class="btn btn-success">ខែនេះ</button>
-                    <button id="btn-last-month" class="btn btn-success">ខែមុន</button>
-                </div>
-                <div class="col-lg-3 d-flex">
-                    <input type="date" id="start" class="form-control">
-                    <input type="date" id="end" class="form-control">
-                    <button class="btn btn-success" id="btn-range">បង្ហាញ</button>
+                <div class="col-md-12">
+                    <div class="btn-toolbar">
+                        <div class="btn-group mt-1">
+                            <button id="btn-today" class="btn btn-light">ថ្ងៃនេះ</button>
+                            <button id="btn-yesterday" class="btn btn-light">ម្សិលមិញ</button>
+                            <button id="btn-last-7days" class="btn btn-light">ប្រាំពីថ្ងៃមុន</button>
+                        </div>
+                        <div class="btn-group mr-2 mt-1">
+                            <button id="btn-last-30days" class="btn btn-light">សាមសិបថ្ងៃមុន</button>
+                            <button id="btn-this-month" class="btn btn-light">ខែនេះ</button>
+                            <button id="btn-last-month" class="btn btn-light">ខែមុន</button>
+                        </div>
+                        <div class="btn-group mt-1">
+                            <button type="button" class="btn btn-light p-0">
+                                <input type="date" id="start" class="form-control border-0">
+                            </button>
+                            <button type="button" class="btn btn-light p-0">
+                                <input type="date" id="end" class="form-control border-0">
+                            </button>
+                            <button type="button" class="btn btn-success" id="btn-range">បង្ហាញ</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            {{--end btn toollbar--}}
             <div class="row mt-3">
                 <div class="col-lg-3">
                     <!-- Members online -->
