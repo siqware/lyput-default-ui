@@ -154,20 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
         $(this.parentNode.parentNode).find('#amount').val(qty*purchase);
         calcTotal();
     });
-    /*Save data to local storage*/
-    $(document).on('click','#btn-submit',function () {
-
-// Retrieve the object from storage
-        var clone = document.getElementById("pro-input-list");
-        console.log(clone);
-        // var testObject = { 'last_item': $('#pro-input-list').clone()[0].innerHTML };
-        var testObject = { 'last_item': clone };
-
-// Put the object into storage
-        localStorage.setItem('testObject', JSON.stringify(testObject));
-        var retrievedObject = localStorage.getItem('testObject');
-        $('#pro-input-list').append(JSON.parse(retrievedObject).last_item)
-    });
     /*default sidebar mini*/
     $('body').addClass('sidebar-xs');
 });
