@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33ada014-aedf-4ea1-b013-8cc083af894a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/pages/dashboard/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dashboard-ui/assets/css/components.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/dashboard-ui/assets/css/components.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dashboard-ui/assets/css/components.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/dashboard-ui/assets/css/components.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/budget/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/budget/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoice/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoice/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoice/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoice/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/check.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/check.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/import.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/import.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/budget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/budget.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/buy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/buy.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/close_report.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/close_report.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/inc_exp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/inc_exp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/sell.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/sell.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="33ada014-aedf-4ea1-b013-8cc083af894a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,104 +26,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
-              <folding>
-                <element signature="e#40#55#0#PHP" expanded="true" />
-                <element signature="e#386#1244#0#PHP" />
-                <element signature="e#1294#2942#0#PHP" />
-                <element signature="e#3027#3104#0#PHP" />
-                <element signature="e#3147#3906#0#PHP" />
-                <element signature="e#3924#4698#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="153" column="26" lean-forward="true" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
-              <folding>
-                <element signature="e#3042#3092#0#HTML" />
-                <element signature="e#8368#8922#0#HTML" />
-                <element signature="e#3719#4428#0#HTML" />
-                <element signature="e#4445#5158#0#HTML" />
-                <element signature="e#5175#5899#0#HTML" />
-                <element signature="e#7176#7864#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="242" column="22" lean-forward="true" selection-start-line="242" selection-start-column="22" selection-end-line="242" selection-end-column="22" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/pages/report/sell.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="140" column="14" lean-forward="true" selection-start-line="130" selection-start-column="12" selection-end-line="140" selection-end-column="14" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="60" column="104" selection-start-line="60" selection-start-column="104" selection-end-line="60" selection-end-column="104" />
-              <folding>
-                <element signature="e#7#389#0#PHP" expanded="true" />
-                <element signature="e#391#427#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-              <folding>
-                <element signature="e#40#56#0#PHP" expanded="true" />
-                <element signature="e#2609#3418#0#PHP" />
-                <element signature="e#3423#3933#0#PHP" />
-                <element signature="e#3984#5571#0#PHP" />
-                <element signature="e#5604#6584#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -256,10 +134,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard/layout.blade.php" />
         <option value="$PROJECT_DIR$/public/js/custom.js" />
-        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/pages/dashboard/index.js" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/index.js" />
+        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
       </list>
     </option>
   </component>
@@ -491,18 +369,17 @@
       <workItem from="1566197129199" duration="1328000" />
       <workItem from="1566206907657" duration="3253000" />
       <workItem from="1566220361331" duration="5452000" />
-      <workItem from="1566263603236" duration="8828000" />
+      <workItem from="1566263603236" duration="9078000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198412000" />
+    <option name="totallyTimeSpent" value="198662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16559829" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16559829" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -517,7 +394,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32968238" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32968238" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.15305068" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.15305068" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -917,35 +794,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="153" column="26" lean-forward="true" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
-          <folding>
-            <element signature="e#3042#3092#0#HTML" />
-            <element signature="e#8368#8922#0#HTML" />
-            <element signature="e#3719#4428#0#HTML" />
-            <element signature="e#4445#5158#0#HTML" />
-            <element signature="e#5175#5899#0#HTML" />
-            <element signature="e#7176#7864#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/report/sell.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="140" column="14" lean-forward="true" selection-start-line="130" selection-start-column="12" selection-end-line="140" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="242" column="22" lean-forward="true" selection-start-line="242" selection-start-column="22" selection-end-line="242" selection-end-column="22" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -965,8 +817,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+        <state relative-caret-position="290">
+          <caret line="109" column="31" lean-forward="true" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
             <element signature="e#386#1244#0#PHP" />
@@ -974,6 +826,28 @@
             <element signature="e#3027#3104#0#PHP" />
             <element signature="e#3147#3906#0#PHP" />
             <element signature="e#3924#4698#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="246" column="22" selection-start-line="246" selection-start-column="22" selection-end-line="246" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="167" column="22" lean-forward="true" selection-start-line="167" selection-start-column="22" selection-end-line="167" selection-end-column="22" />
+          <folding>
+            <element signature="e#2957#2994#0#HTML" />
+            <element signature="e#3042#3092#0#HTML" />
+            <element signature="e#8368#8922#0#HTML" />
           </folding>
         </state>
       </provider>
