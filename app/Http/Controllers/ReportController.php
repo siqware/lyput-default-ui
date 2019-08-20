@@ -102,6 +102,19 @@ class ReportController extends Controller
         }
         return response()->json(['total_qty'=>$total_qty,'total_sell_amount'=>$total_sell_amount,'benifit_amount'=>$total_sell_amount-$total_pur_of_sell]);
     }
+    /*sell unlist all*/
+    public function sell_un_list_all(){
+        $invoice_details = InvoiceDetail::with('stock_detail_only')->get();
+        $total_qty = 0;
+        $total_sell_amount = 0;
+        $total_pur_of_sell = 0;
+        foreach ($invoice_details as $invoice_detail){
+            $total_qty +=$invoice_detail['qty'];
+            $total_sell_amount +=$invoice_detail['amount'];
+            $total_pur_of_sell +=$invoice_detail['qty']*$invoice_detail['stock_detail_only']['pur_price'];
+        }
+        return response()->json(['total_qty'=>$total_qty,'total_sell_amount'=>$total_sell_amount,'benifit_amount'=>$total_sell_amount-$total_pur_of_sell]);
+    }
     public function sell_list(Request $request){
         $input = $request->all();
         $invoice_detail = InvoiceDetail::with('stock_detail')
@@ -136,10 +149,20 @@ class ReportController extends Controller
     /*buy*/
     public function buy_un_list(Request $request){
         $input = $request->all();
-        $products =  StockDetail::with('product')
-            ->whereBetween('created_at',[$input['start'],$input['end']])
+        $products =  StockDetail::whereBetween('created_at',[$input['start'],$input['end']])
             ->where('status',1)
             ->get();
+        $total_qty = 0;
+        $total_purchase = 0;
+        foreach ($products as $product){
+            $total_qty+=$product['qty'];
+            $total_purchase+=$product['qty']*$product['pur_price'];
+        }
+        return response()->json(['total_qty'=>$total_qty,'total_purchase'=>$total_purchase]);
+    }
+    /*buy unlist all*/
+    public function buy_un_list_all(){
+        $products =  StockDetail::where('status',1)->get();
         $total_qty = 0;
         $total_purchase = 0;
         foreach ($products as $product){

@@ -3833,6 +3833,34 @@ input[type=text].noui-height-helper:not(.noUi-target)[data-fouc] {
 *  Charts base - container and sizing setup
 *
 * ---------------------------------------------------------------------------- */
+.chart-container {
+  position: relative;
+  width: 100%; }
+  .chart-container.has-scroll {
+    overflow-x: scroll;
+    overflow-y: visible;
+    max-width: 100%; }
+  @media (max-width: 767.98px) {
+    .chart-container {
+      overflow-x: scroll;
+      overflow-y: visible;
+      max-width: 100%; } }
+
+.chart {
+  position: relative;
+  display: block;
+  width: 100%; }
+  .chart.has-minimum-width {
+    min-width: 37.5rem; }
+
+.has-fixed-height {
+  height: 400px; }
+
+.chart-pie {
+  width: 100%;
+  height: 400px;
+  min-width: 31.25rem; }
+
 /* ------------------------------------------------------------------------------
 *
 *  # C3 charts

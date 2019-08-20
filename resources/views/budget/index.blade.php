@@ -139,11 +139,7 @@
 @section('page-script')
     @routes
     <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+
         console.log('app started')
     </script>
 @stop

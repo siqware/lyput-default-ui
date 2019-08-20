@@ -152,11 +152,7 @@
 @section('page-script')
     @routes
     <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+
         console.log('app started')
     </script>
 @stop
@@ -171,7 +167,6 @@
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/tables/datatables/extensions/dataTables.rowGroup.min.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
+    <script src="{{asset('dashboard-ui/global_assets/js/plugins/ui/moment/moment.min.js')}}"></script>
     <script src="{{asset('js/pages/report/buy.js')}}"></script>
 @endpush

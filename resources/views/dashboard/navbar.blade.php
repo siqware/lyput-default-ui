@@ -22,11 +22,11 @@
                 </a>
             </li>
         </ul>
-
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a href="{{route('product.check')}}" class="navbar-nav-link {{request()->is('product-check')? 'active':''}}">
                     <i class="icon-checkbox-checked mr-2"></i> ពិនិត្យទំនិញ
+                    <span class="badge badge-pill bg-warning ml-auto ml-md-0 stock-alert">0</span>
                 </a>
             </li>
 

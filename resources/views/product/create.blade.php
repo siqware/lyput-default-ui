@@ -26,7 +26,9 @@
                                         class="icon-add mr-2"></i> បន្ថែមទំនិញ</a></li>
                         <li class="nav-item"><a href="{{route('stock.import.index')}}"
                                                 class="navbar-nav-link {{request()->is('product-stock-import-index')? 'active':''}}"><i
-                                        class="icon-add mr-2"></i> បន្ថែមស្តុក</a></li>
+                                        class="icon-add mr-2"></i> បន្ថែមស្តុក
+                                <span class="badge badge-pill bg-warning ml-auto ml-md-0 stock-alert">0</span>
+                            </a></li>
                     </ul>
                 </div>
             </div>
@@ -127,11 +129,7 @@
 @section('page-script')
     @routes
     <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+
         console.log('app started')
     </script>
 @stop

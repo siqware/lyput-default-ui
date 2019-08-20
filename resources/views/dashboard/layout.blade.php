@@ -29,6 +29,9 @@
     <!-- Theme JS files -->
     <script src="{{asset('dashboard-ui/assets/js/app.js')}}"></script>
     <!-- /theme JS files -->
+    <!-- Custom JS files -->
+    <script src="{{asset('js/custom.js')}}"></script>
+    <!-- /Custom JS files -->
 
 </head>
 
@@ -56,7 +59,7 @@
 
 
         <!-- Content area -->
-        <div class="content">
+        <div class="content pl-0">
             @yield('page-content')
         </div>
         <!-- /content area -->

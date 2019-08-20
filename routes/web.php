@@ -18,7 +18,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware'=>['is.admin']], function () {
     Route::get('/', function () {
-        return view('report.sell');
+        return view('index');
     })->name('dashboard');
     Route::get('media', function () {
         return view('file-manager');
@@ -37,6 +37,7 @@ Route::group(['middleware'=>['is.admin']], function () {
 // end import stock
     Route::post('/search-product-stock', 'ProductController@search_stock')->name('product.search.stock');
     Route::post('/search-product-out-stock', 'ProductController@search_out_stock')->name('product.search.out.stock');
+    Route::post('/search-product-out-stock-alert', 'ProductController@stock_alert')->name('product.search.out.stock.alert');
     Route::post('/search-product-autocomplete', 'ProductController@product_autocomplete')->name('product.search.autocomplete');
     Route::get('/product-check', 'ProductController@check')->name('product.check');
     Route::get('/product-check-list', 'ProductController@check_list')->name('product.check.list');
@@ -52,10 +53,12 @@ Route::group(['middleware'=>['is.admin']], function () {
     /*Report*/
     Route::get('/report-buy-list', 'ReportController@buy_list')->name('buy.list');
     Route::post('/report-buy-un-list', 'ReportController@buy_un_list')->name('buy.un.list');
+    Route::post('/report-buy-un-list-all', 'ReportController@buy_un_list_all')->name('buy.un.list.all');
     Route::get('/report-buy', 'ReportController@buy')->name('buy');
     Route::get('/report-sell', 'ReportController@sell')->name('sell');
     Route::get('/report-sell-list', 'ReportController@sell_list')->name('sell.list');
     Route::post('/report-sell-un-list', 'ReportController@sell_un_list')->name('sell.un.list');
+    Route::post('/report-sell-un-list-all', 'ReportController@sell_un_list_all')->name('sell.un.list.all');
     Route::get('/report-income-expense', 'ReportController@exp_inc')->name('inc.exp');
     Route::get('/report-income-expense-index', 'ReportController@exp_inc_index')->name('inc.exp.index');
     Route::get('/report-budget-index', 'ReportController@budget_index')->name('report.budget.index');

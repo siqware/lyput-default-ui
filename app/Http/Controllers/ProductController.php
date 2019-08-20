@@ -11,6 +11,16 @@ use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
 {
+    /*stock alert qty*/
+    public function stock_alert()
+    {
+        $results = StockDetail::whereHas('product_stock_search')
+            ->where('status','<>',0)
+            ->where('is_stock','=',0)
+            ->where('remain_qty', '=', 0)
+            ->count();
+        return response()->json(['stock_alert' => $results]);
+    }
     /*import stock*/
     public function import_stock_index(){
         return view('product.import');
