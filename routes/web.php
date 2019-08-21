@@ -46,6 +46,13 @@ Route::group(['middleware'=>['is.admin']], function () {
     Route::get('/invoice-index', 'ProductController@invoicing_index')->name('product.invoice.index');
     Route::get('/stock-detail-data/{id}', 'InvoiceController@get_stock_id')->name('stock.detail.data');
     Route::get('/invoice-detail-list', 'InvoiceController@invoice_list')->name('invoice.detail.list');
+    /*income note*/
+    Route::get('/invoice-income-note-index', 'IncomeNoteController@index')->name('income.note.index');
+    Route::get('/invoice-income-note-list', 'IncomeNoteController@list')->name('income.note.list');
+    Route::post('/invoice-income-note', 'IncomeNoteController@store')->name('income.note.store');
+    Route::put('/invoice-income-note/{id}', 'IncomeNoteController@update')->name('income.note.update');
+    Route::get('/invoice-income-note/{id}/edit', 'IncomeNoteController@edit')->name('income.note.edit');
+    Route::delete('/invoice-income-note/{id}', 'IncomeNoteController@destroy')->name('income.note.destroy');
     /*Budget*/
     Route::resource('budget', 'BudgetController');
     Route::get('/budget-list', 'BudgetController@budget_list')->name('budget.list');

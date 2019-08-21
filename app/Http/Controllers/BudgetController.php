@@ -142,12 +142,12 @@ class BudgetController extends Controller
         $input = $request->all();
         /*validate*/
         $request->validate([
-            'desc'=>'required',
-            'amount'=>'required',
+            'budget.0.desc'=>'required',
+            'budget.0.amount'=>'required',
         ]);
         $budget = Budget::findOrFail($id);
-        $budget->desc = $input['desc'];
-        $budget->amount = $input['amount'];
+        $budget->desc = $input['budget'][0]['desc'];
+        $budget->amount = $input['budget'][0]['amount'];
         $budget->save();
         if ($budget){
             return redirect(route('budget.index'));

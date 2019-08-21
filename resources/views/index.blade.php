@@ -21,7 +21,7 @@
 @stop
 @section('page-content')
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-header header-elements-inline">
                     <h5 class="card-title">សរុបទំនិញទិញចូល</h5>
@@ -34,16 +34,16 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <!-- Members online -->
                             <div class="card bg-teal-300">
                                 <div class="card-body">
                                     <div class="d-flex">
-                                        <h3 class="font-weight-semibold mb-0 totalCount">0</h3>
+                                        <h3 class="font-weight-semibold mb-0 totalRecord">0</h3>
                                     </div>
 
                                     <div>
-                                        ចំនួនសរុប
+                                       សរុបមុខទំនិញក្នុងស្តុក
                                     </div>
                                 </div>
 
@@ -54,7 +54,27 @@
                             <!-- /members online -->
 
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <!-- Members online -->
+                            <div class="card bg-teal-300">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <h3 class="font-weight-semibold mb-0 totalCount">0</h3>
+                                    </div>
+
+                                    <div>
+                                        សរុបចំនួនទំនិញក្នុងស្តុក
+                                    </div>
+                                </div>
+
+                                <div class="container-fluid">
+                                    <div id="members-online"></div>
+                                </div>
+                            </div>
+                            <!-- /members online -->
+
+                        </div>
+                        <div class="col-md-4">
                             <!-- Members online -->
                             <div class="card bg-pink-300">
                                 <div class="card-body">
@@ -78,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-header header-elements-inline">
                     <h5 class="card-title">សរុបទំនិញលក់ចេញ</h5>
@@ -91,16 +111,16 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <!-- Members online -->
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex">
-                                        <h3 class="font-weight-semibold mb-0 sellTotalCount"></h3>
+                                        <h3 class="font-weight-semibold mb-0 sell_stock_qty"></h3>
                                     </div>
 
                                     <div>
-                                        ចំនួនសរុប
+                                        សរុបមុខទំនិញលក់
                                     </div>
                                 </div>
 
@@ -111,7 +131,27 @@
                             <!-- /members online -->
 
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
+                            <!-- Members online -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <h3 class="font-weight-semibold mb-0 sellTotalCount"></h3>
+                                    </div>
+
+                                    <div>
+                                        សរុបចំនួនទំនិញលក់
+                                    </div>
+                                </div>
+
+                                <div class="container-fluid">
+                                    <div id="members-online"></div>
+                                </div>
+                            </div>
+                            <!-- /members online -->
+
+                        </div>
+                        <div class="col-md-3">
                             <!-- Members online -->
                             <div class="card">
                                 <div class="card-body">
@@ -131,7 +171,7 @@
                             <!-- /members online -->
 
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <!-- Members online -->
                             <div class="card">
                                 <div class="card-body">

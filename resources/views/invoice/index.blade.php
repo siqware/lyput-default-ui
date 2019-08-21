@@ -21,6 +21,10 @@
                         <li class="nav-item"><a href="{{route('invoice.create')}}"
                                                 class="navbar-nav-link {{request()->is('invoice/create')? 'active':''}}"><i
                                         class="icon-pencil mr-2"></i> កត់វិក័យប័ត្រ</a></li>
+                        <li class="nav-item"><a href="{{route('income.note.index')}}"
+                                                class="navbar-nav-link {{request()->is('invoice-income-note*')? 'active':''}}"><i
+                                        class="icon-pencil mr-2"></i> កត់ថ្លៃឈ្នួល</a></li>
+
                     </ul>
                 </div>
             </div>

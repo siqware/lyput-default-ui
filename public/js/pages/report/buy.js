@@ -140,7 +140,10 @@ var end = moment().add(1,'days').format('Y-M-D');
                 "columnDefs": [
                     { className: "pl-3", "targets": [ 0,1,2,3,4,5,6,7 ] },
                     { className: "text-center", "targets": [ 8 ] },
-                ]
+                ],
+                drawCallback:function (settings) {
+                    $('.totalRecord').text(settings.json.recordsTotal)
+                }
             });
         }
         init_table();

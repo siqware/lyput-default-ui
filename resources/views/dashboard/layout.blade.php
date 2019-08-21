@@ -8,30 +8,32 @@
     <title>Siqware - @yield('page-title')</title>
 
     <!-- Global stylesheets -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-    <link href="{{asset('dashboard-ui/global_assets/css/icons/icomoon/styles.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">
+    <link href="{{asset('dashboard-ui/global_assets/css/icons/icomoon/styles.min.css')}}" rel="stylesheet"
+          type="text/css">
     <link href="{{asset('dashboard-ui/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('dashboard-ui/assets/css/bootstrap_limitless.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('dashboard-ui/assets/css/layout.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('dashboard-ui/assets/css/components.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('dashboard-ui/assets/css/colors.min.css')}}" rel="stylesheet" type="text/css">
-    @stack('page-css')
-    <!-- /global stylesheets -->
-    @yield('page-style')
-    <!-- Core JS files -->
+@stack('page-css')
+<!-- /global stylesheets -->
+@yield('page-style')
+<!-- Core JS files -->
     <script src="{{asset('dashboard-ui/global_assets/js/main/jquery.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/main/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/loaders/blockui.min.js')}}"></script>
-    @yield('page-script')
-    @stack('page-js')
-    <!-- /core JS files -->
+@yield('page-script')
+<!-- Custom JS files -->
+    <script src="{{asset('js/custom.js')}}"></script>
+    <!-- /Custom JS files -->
+@stack('page-js')
+<!-- /core JS files -->
 
     <!-- Theme JS files -->
     <script src="{{asset('dashboard-ui/assets/js/app.js')}}"></script>
     <!-- /theme JS files -->
-    <!-- Custom JS files -->
-    <script src="{{asset('js/custom.js')}}"></script>
-    <!-- /Custom JS files -->
 
 </head>
 
@@ -47,15 +49,15 @@
 
     <!-- Main sidebar -->
 @include('dashboard.sidebar')
-    <!-- /main sidebar -->
+<!-- /main sidebar -->
 
 
     <!-- Main content -->
     <div class="content-wrapper">
 
         <!-- Page header -->
-        @yield('page-header')
-        <!-- /page header -->
+    @yield('page-header')
+    <!-- /page header -->
 
 
         <!-- Content area -->
@@ -68,7 +70,8 @@
         <!-- Footer -->
         <div class="navbar navbar-expand-lg navbar-light">
             <div class="text-center d-lg-none w-100">
-                <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
+                        data-target="#navbar-footer">
                     <i class="icon-unfold mr-2"></i>
                     Footer
                 </button>

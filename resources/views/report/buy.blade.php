@@ -93,11 +93,31 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
+                                <h3 class="font-weight-semibold mb-0 totalRecord"></h3>
+                            </div>
+
+                            <div>
+                                សរុបមុខទំនិញ
+                            </div>
+                        </div>
+
+                        <div class="container-fluid">
+                            <div id="members-online"></div>
+                        </div>
+                    </div>
+                    <!-- /members online -->
+
+                </div>
+                <div class="col-lg-3">
+                    <!-- Members online -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex">
                                 <h3 class="font-weight-semibold mb-0 totalCount"></h3>
                             </div>
 
                             <div>
-                                ចំនួនសរុប
+                                សរុបមុខទំនិញក្នុងស្តុក
                             </div>
                         </div>
 

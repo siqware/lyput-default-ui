@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
         success:function (data) {
             $('.totalAmount').html(formatter.format(data.total_purchase));
             $('.totalCount').html(data.total_qty);
+            $('.totalRecord').html(data.total_record);
         }
     })
     /*sell*/
@@ -247,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $('.sellTotalAmount').html(formatter.format(data.total_sell_amount));
             $('.sellTotalCount').html(data.total_qty);
             $('.sellTotalIncomeAmount').html(formatter.format(data.benifit_amount));
+            $('.sell_stock_qty').html(data.sell_stock_qty);
         }
     })
 });
