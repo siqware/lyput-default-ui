@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.budget-input-list').append(tr_el);
         _no++;
         DatatableBasic.initJqueryUI();
+        $('select').val($('#main-type').val());
     });
     /*remove tr*/
     $(document).on('click','.btn-remove-tr',function () {

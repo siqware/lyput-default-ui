@@ -71,7 +71,7 @@
                                         <tr>
                                             <td>
                                                 @if(!request()->is('budget/*/edit'))
-                                                <select name="budget[0][type]" class="form-control">
+                                                <select id="main-type" name="budget[0][type]" class="form-control">
                                                     <option value="inc">ចំណូល</option>
                                                     <option value="exp">ចំណាយ</option>
                                                 </select>
@@ -149,8 +149,8 @@
 @stop
 @section('page-style')
     <style>
-        body {
-            /*color: red;*/
+        select {
+            padding: 2px !important;
         }
     </style>
 @stop

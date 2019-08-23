@@ -150,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             listedId.push(parseInt($(val).val()))
         });
         $(select2DOM).select2({
+            width:'400px',
             ajax:{
                 url:route('product.search.stock').template,
                 method:'post',

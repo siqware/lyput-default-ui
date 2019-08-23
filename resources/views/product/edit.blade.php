@@ -115,21 +115,15 @@
     <!-- /New Bulk Product -->
 @stop
 @section('page-script')
-    <script>
-        console.log('app started')
-    </script>
+    @routes
 @stop
 @section('page-style')
-    <style>
-        body {
-            /*color: red;*/
-        }
-    </style>
 @stop
 @push('page-js')
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/notifications/sweet_alert.min.js')}}"></script>
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/styling/uniform.min.js')}}"></script>
-    <script src="{{asset('js/pages/product/create.js')}}"></script>
+    <script src="{{asset('dashboard-ui/global_assets/js/plugins/extensions/jquery_ui/widgets.min.js')}}"></script>
     <script src="{{asset('js/pages/product/edit.js')}}"></script>
+    <script src="{{asset('js/pages/product/create.js')}}"></script>
 @endpush

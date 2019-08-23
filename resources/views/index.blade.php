@@ -196,39 +196,11 @@
             </div>
         </div>
     </div>
-    <!-- Basic columns -->
-    {{--<div class="card">
-        <div class="card-header header-elements-inline">
-            <h5 class="card-title">Basic columns</h5>
-            <div class="header-elements">
-                <div class="list-icons">
-                    <a class="list-icons-item" data-action="collapse"></a>
-                    <a class="list-icons-item" data-action="reload"></a>
-                    <a class="list-icons-item" data-action="remove"></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-body">
-            <div class="chart-container">
-                <div class="chart has-fixed-height" id="columns_basic"></div>
-            </div>
-        </div>
-    </div>--}}
-    <!-- /basic columns -->
 @stop
 @section('page-script')
     @routes
-    <script>
-        console.log('app started')
-    </script>
 @stop
 @section('page-style')
-    <style>
-        body{
-            /*color: red;*/
-        }
-    </style>
 @stop
 @push('page-js')
     <script src="{{asset('dashboard-ui/global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
