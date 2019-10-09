@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../lyput-garage/.idea/garage.iml" filepath="$PROJECT_DIR$/../lyput-garage/.idea/garage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lyput-default-ui.iml" filepath="$PROJECT_DIR$/.idea/lyput-default-ui.iml" />
     </modules>
   </component>
 </project>
